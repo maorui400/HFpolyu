@@ -372,7 +372,6 @@ main {
   min-height: calc(100vh - 380px); /* 视口高度减去头部和底部高度 */
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .loading-container {
