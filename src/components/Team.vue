@@ -2,11 +2,9 @@
 import { ref } from "vue";
 import pageBanner from "./banners/page-banner.vue";
 const mainTitle = ref("核心团队");
-import {professorsInfo} from './professorsInfo'
-const getImgSrc = (path) => {
-return new URL(`${path}`, import.meta.url).href;
-}
+import {professorsInfo} from './webMockInfos'
 
+import { getImgSrc } from '../utils/common'
 console.log('professorsInfo', professorsInfo)
 const professorsList = ref(professorsInfo)
 </script>

@@ -28,7 +28,7 @@ const professorInfo = ref([
   },
   {
     id: 2,
-    name: "严峰 教授",
+    name: "严锋 教授",
     releaseTime: "2024-12-18 15:45:01",
     picture: prof2,
     position: "副院长 生物医疗精密传感器研究所主任",
@@ -67,9 +67,7 @@ const professorInfo = ref([
     releaseTime: "2024-12-19 10:21:58",
     picture: prof5,
     position: "北斗应用技术研发中心主任",
-    details: [
-      "香港理工大学土地测量与地理资讯学系研究助理教授",
-    ],
+    details: ["香港理工大学土地测量与地理资讯学系研究助理教授"],
   },
 
   {
@@ -100,21 +98,19 @@ const professorInfo = ref([
       "香港理工大学航空及民航工程学系主任",
     ],
   },
-    {
+  {
     id: 9,
     name: "蒋一平 助理教授",
     releaseTime: "2024-12-19 10:25:20",
     picture: prof9,
     position: "",
-    details: [
-      "香港理工大学航空及民航工程学系助理教授",
-    ],
+    details: ["香港理工大学航空及民航工程学系助理教授"],
   },
 ]);
 
-const route = useRoute();  // 获取当前路由信息
-const id = Number(route.params.id);  // 将参数转为数字（因为你的 id 是数字）
-console.log("当前信息ID",id);
+const route = useRoute(); // 获取当前路由信息
+const id = Number(route.params.id); // 将参数转为数字（因为你的 id 是数字）
+console.log("当前信息ID", id);
 // 根据 id 动态匹配教授信息
 const showInfo = computed(() => {
   return professorInfo.value.find((item) => item.id === id);
@@ -122,27 +118,33 @@ const showInfo = computed(() => {
 // 计算上一个/下一个教授的 id（用于翻页功能）
 const prevId = computed(() => {
   if (!showInfo.value) return null;
-  const currentIndex = professorInfo.value.findIndex(item => item.id === id);
-  console.log("prevId当前的信息ID",currentIndex);
+  const currentIndex = professorInfo.value.findIndex((item) => item.id === id);
+  console.log("prevId当前的信息ID", currentIndex);
   return currentIndex > 0 ? professorInfo.value[currentIndex - 1].id : null;
 });
-console.log("上一条信息ID",prevId.value);
+console.log("上一条信息ID", prevId.value);
 const nextId = computed(() => {
   if (!showInfo.value) return null;
-  const currentIndex = professorInfo.value.findIndex(item => item.id === id);
-  console.log("nextId当前的信息ID",id,currentIndex);
-  return currentIndex < professorInfo.value.length - 1 ? professorInfo.value[currentIndex + 1].id : null;
+  const currentIndex = professorInfo.value.findIndex((item) => item.id === id);
+  console.log("nextId当前的信息ID", id, currentIndex);
+  return currentIndex < professorInfo.value.length - 1
+    ? professorInfo.value[currentIndex + 1].id
+    : null;
 });
 
 const prevOne = computed(() => {
-  return prevId.value ? professorInfo.value.find(item => item.id === prevId.value)?.name : null;
+  return prevId.value
+    ? professorInfo.value.find((item) => item.id === prevId.value)?.name
+    : null;
 });
 
 const nextOne = computed(() => {
-  return nextId.value ? professorInfo.value.find(item => item.id === nextId.value)?.name : null;
+  return nextId.value
+    ? professorInfo.value.find((item) => item.id === nextId.value)?.name
+    : null;
 });
 
-console.log("下一条信息ID",nextId.value);
+console.log("下一条信息ID", nextId.value);
 </script>
 
 <template>
@@ -198,26 +200,26 @@ console.log("下一条信息ID",nextId.value);
   margin: 35px 0;
   width: 1200px;
 }
-.content .professor_resume h2{
+.content .professor_resume h2 {
   font-weight: bold;
   color: #333333;
 }
-.content .professor_resume span{
+.content .professor_resume span {
   font-size: 14px;
   color: #666666;
   padding: 15px 0;
 }
-.content .professor_resume h3{
+.content .professor_resume h3 {
   font-size: 16px;
   color: #000000;
   font-weight: bold;
   padding: 15px 0;
 }
-.content .professor_resume .details p{
+.content .professor_resume .details p {
   margin: 0 0 15px;
   font-size: 16px;
-    color: rgb(0, 0, 0);
-    font-family: arial, helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  font-family: arial, helvetica, sans-serif;
 }
 .content .professor_resume .professor-img {
   width: 300px; /* 限制图片宽度 */

@@ -83,7 +83,7 @@ const professors = ref([
   },
   {
     id: 2,
-    name: "严峰 教授",
+    name: "严锋 教授",
     title: "副院长 生物医疗精密传感器研究所主任",
     image: new URL(
       "../assets/images/coreteam/people_RC01_01.jpg",

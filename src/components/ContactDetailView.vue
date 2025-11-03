@@ -1,8 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRoute } from "vue-router";
-import pageBanner from "./banners/page-banner.vue";
-const mainTitle = ref("核心团队");
+
 // 路由id匹配数据信息
 const route = useRoute(); // 获取当前路由信息
 const id = Number(route.params.id); // 将参数转为数字（因为你的 id 是数字）
