@@ -216,7 +216,7 @@ const startPatentScroll = () => {
         <div class="content--section__title">
           <div>研究中心</div>
           <div class="conmon_style_link">
-            <RouterLink to="/hexintuandui">查看更多 >></RouterLink>
+            <RouterLink to="/research/center/2">查看更多 >></RouterLink>
           </div>
         </div>
         <div class="department">

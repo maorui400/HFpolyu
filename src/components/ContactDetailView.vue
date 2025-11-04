@@ -207,9 +207,14 @@ const jumpTo51 = (url) => {
   flex-direction: column;
   align-items: flex-start;
   padding: 50px 0;
+  border-radius: 8px !important;
+  border: 1px solid;
+  border-color: #dcdcdc;
+  padding: 20px;
+  margin: 20px 0 20px 0;
 }
 .contact_content .tendering_info h3 {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.5;
   color: #000000;
   margin-bottom: 30px;
@@ -219,7 +224,7 @@ const jumpTo51 = (url) => {
 }
 .contact_content .tendering_info p {
   margin: 0 0 10px;
-  font-size: 18px;
+  font-size: 16px;
   color: #666666;
 }
 .contact_content .recruitment_positions {

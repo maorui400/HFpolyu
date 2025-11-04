@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
-
+import { stationInfo } from "./components/webMockInfos";
 const route = useRoute(); // 获取当前路由信息
 const router = useRouter();
 const showSubMenu = ref(false);
@@ -120,29 +120,11 @@ const handleSearch = () => {
       </div>
       <div class="deparment">
         <div class="title">研究中心</div>
-        <div class="item">
-          <router-link to="/research/center/1"
-            >生物医疗精密传感器研究所</router-link
-          >
+        <div class="item" v-for="item in stationInfo" :key="item.id">
+          <router-link :to="`/research/center/${item.id}`">{{
+            item.name
+          }}</router-link>
           <!-- <a href="javascript:void(0);">生物医疗精密传感器研究所</a> -->
-        </div>
-        <div class="item">
-          <router-link to="/research/center/1"
-            >飞行器与低空导航研发中心</router-link
-          >
-          <!-- <a href="javascript:void(0);">飞行器与低空导航研发中心</a> -->
-        </div>
-        <div class="item">
-          <router-link to="/research/center/1"
-            >北斗应用技术研发中心</router-link
-          >
-          <!-- <a href="javascript:void(0);">北斗应用技术研发中心</a> -->
-        </div>
-        <div class="item">
-          <router-link to="/research/center/1"
-            >行星遥感与机器视觉研发中心</router-link
-          >
-          <!-- <a href="javascript:void(0);">行星遥感与机器视觉研发中心</a> -->
         </div>
       </div>
       <div class="contactinfo">
@@ -156,7 +138,7 @@ const handleSearch = () => {
         <div class="title">关注我们</div>
         <div class="item" id="item">
           <div class="qrcode">
-            <img src="./assets/images/QRcode.png" alt="" />
+            <img src="./assets/images/QRcode.jpg" alt="" />
           </div>
           <div class="notice">
             <p>微信公众号/视频号/小红书</p>
@@ -430,8 +412,8 @@ footer .wrapper .navgation {
   min-height: 240px;
 }
 footer .wrapper .deparment {
-  width: 20%;
-  min-height: 240px;
+  width: 25%;
+  min-height: 280px;
   margin-left: 20px;
 }
 footer .wrapper .contactinfo {
@@ -469,6 +451,8 @@ footer .wrapper .item .qrcode img {
 footer .wrapper .media #item {
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 footer .wrapper .media #item .notice {
   position: absolute;
