@@ -8,6 +8,7 @@ import centerTeam3 from "../assets/images/researchcenter/RCTeam/team3.png";
 import centerTeam4 from "../assets/images/researchcenter/RCTeam/team4.png";
 import centerTeam5 from "../assets/images/researchcenter/RCTeam/team5.png";
 import centerTeam6 from "../assets/images/researchcenter/RCTeam/team6.png";
+import centerTeam7 from "../assets/images/researchcenter/RCTeam/team7.png";
 
 import center1Video from "../assets/videos/center1.mp4";
 import center2Video from "../assets/videos/center2.mp4";
@@ -125,7 +126,8 @@ const centerInfo = ref([
   {
     id: 3,
     name: "医用超声成像与传感器研发中心",
-    intro: "——",
+    intro:
+      "医用超声成像与传感研发中心将围绕超声换能器、超声成像算法与超声成像系统三条主线开展协同攻关：在换能器方面聚焦高性能、便携化探头的材料与制造技术；在成像算法方面面向新型阵列与应用场景，发展高分辨率、低噪声的超声成像方法；在系统方面推进超声模拟前端、FPGA/SoC信号处理及与移动终端的融合，形成从核心器件到整机的完整技术链。研发中心将依托皖港优势资源，服务医疗超声设备国产化与精准医疗应用，推动高端超声可视化医疗器械在临床各科及基层的落地。",
     direction: [
       "高频超声阵列换能器：基于高性能压电单晶以及低衰减声学功能材料，研发并制备高性能的高频阵列换能器。",
       "高性能超声成像系统：致力于研发高带宽激励信号，高采样率的超声成像系统。",
@@ -154,7 +156,8 @@ const centerInfo = ref([
   {
     id: 4,
     name: "超声神经调控和超声诊疗中心",
-    intro: "-",
+    intro:
+      "本中心致力于突破传统医学影像与神经调控技术局限，聚焦两大前沿方向：无创功能超声成像系统与超声神经调控系统。在功能成像方面，研发超高频声波及多模态融合技术，结合AI算法，实现组织功能参数的动态定量评估，推动超声诊断从形态学向功能学跨越。在神经调控方面，利用超声精准无创特性，开发新型神经干预工具，为帕金森病、抑郁症等神经系统疾病提供安全、可逆的治疗方案，并助力脑科学基础研究。通过医工交叉与临床转化，本中心旨在成为国际领先的超声诊疗创新平台，为疾病诊疗和脑机接口等领域提供变革性技术支撑。",
     direction: [
       "无创功能成像领域：研发超高频声波与多模态融合技术，结合AI算法，实现组织氧代谢、弹性模量等功能参数的动态定量评估，推动超声诊断从形态学向功能学的跨越。",
       "超声神经调控领域：利用超声波的精准无创特性，开发新型神经干预工具，为帕金森病、抑郁症等难治性神经系统疾病提供安全、可逆的治疗方案，同时助力脑科学基础研究。",
@@ -233,16 +236,22 @@ const centerInfo = ref([
   {
     id: 7,
     name: "肿瘤放疗疗效管理辅助机器人研发中心",
-    intro: "——",
-    direction: ["——"],
+    intro:
+      "肿瘤放疗疗效管理辅助机器人研发中心专注于放疗疗效管理领域，致力于开发基于人工智能与多模态感知的放疗疗效管理机器人技术。研发团队在医疗机器人、医学影像分析及放射治疗领域具备深厚积累，依托产学研医协同创新模式，与医疗机构及企业深度合作，提供高精度、高一致性的智能评估解决方案，推动肿瘤放疗疗效管理进入客观化与智能化的新纪元。",
+    direction: [
+      "本项目的核心产业转化路径为研发具备医疗器械资证的智能评估机器人系统。通过与顶级医疗机构的临床合作，我们将建立覆盖图像采集、定量分析与疗效追踪的一体化解决方案。未来计划拓展至多癌种的放疗疗效管理，并探索与智慧医院系统、远程医疗平台的数据对接，构建肿瘤放疗疗效管理的行业新标准。",
+    ],
+    teamPhoto: centerTeam7,
     developPlan: [
       {
-        item: "——",
-        content: "——",
+        item: "技术创新",
+        content:
+          "开发可便携式图像采集设备，开发多模态数据融合技术，整合可见光和热成像数据，建立跨癌种的放疗疗效评估模型。计划引入新的模型架构提升模型泛化能力，并开发增量学习系统实现模型的持续优化。",
       },
       {
-        item: "——",
-        content: "——",
+        item: "成果转化",
+        content:
+          "率先推进放射性皮炎评估模块的产品化，通过与多家顶级肿瘤医院建立临床示范中心，验证技术可靠性，并逐步拓展至口腔黏膜炎、放射性肺炎等并发症的评估模块。",
       },
     ],
     img: "",
@@ -406,10 +415,6 @@ const navigateToCenter = (centerId) => {
           您的浏览器不支持 HTML5 video 标签。
         </video>
       </div>
-      <!-- 团队照片 -->
-      <div v-if="showInfo.teamPhoto" class="center-teamPhoto">
-        <img :src="showInfo.teamPhoto" width="500px" alt="" />
-      </div>
 
       <div class="research_direction">
         <h4>产业转化方向</h4>
@@ -423,6 +428,10 @@ const navigateToCenter = (centerId) => {
           <p><span class="point"></span> {{ item.item }}</p>
           <span>{{ item.content }}</span>
         </div>
+      </div>
+      <!-- 团队照片 -->
+      <div v-if="showInfo.teamPhoto" class="center-teamPhoto">
+        <img :src="showInfo.teamPhoto" width="500px" alt="" />
       </div>
     </div>
   </div>

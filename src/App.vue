@@ -72,7 +72,7 @@ const handleSearch = () => {
             <!-- 联系我们二级导航 -->
             <transition name="fade">
               <div v-show="showContactSubMenu" class="submenu">
-                <router-link to="/contactdetails/1">项目合作</router-link>
+                <!-- <router-link to="/contactdetails/1">项目合作</router-link> -->
                 <router-link to="/contactdetails/2">采购招标</router-link>
                 <router-link to="/contactdetails/3">人才招聘</router-link>
               </div>

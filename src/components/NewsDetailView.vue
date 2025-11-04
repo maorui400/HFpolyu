@@ -36,8 +36,6 @@ import new_details_12_04 from "../assets/images/news/newsitem/details_12_04.jpg"
 import new_details_12_05 from "../assets/images/news/newsitem/details_12_05.jpg";
 import new_details_12_06 from "../assets/images/news/newsitem/details_12_06.jpg";
 // 导入视频
-import new_details_6_video from "../assets/videos/1月3日南京电视台采访.mp4";
-import new_details_11_video from "../assets/videos/张丹院长：网易未来大会.mp4";
 
 // 路由id匹配数据信息
 const route = useRoute(); // 获取当前路由信息
@@ -438,7 +436,8 @@ const newsInfo = ref([
       },
       {
         type: "text",
-        content:  '那最后介绍一下我团队在这方面做的一些工作。首先我们做了一个创新的设计叫paralyzation of Siri Robot。现在90%的机器人在工业当中应用都是串联机器人，那么我们能不能把这些最流行的串联机器人并联化？就是说把那个串联机器人，并联机器人，结合起来，产生新一代的机器人，是一个继承了父母亲的优点的一种机器人，<span style="color:red; font-weight: bold;">意思就是说把本来是串联的变成一个并联的，让它既有串联的优点又有并联的优点。</span>'
+        content:
+          '那最后介绍一下我团队在这方面做的一些工作。首先我们做了一个创新的设计叫paralyzation of Siri Robot。现在90%的机器人在工业当中应用都是串联机器人，那么我们能不能把这些最流行的串联机器人并联化？就是说把那个串联机器人，并联机器人，结合起来，产生新一代的机器人，是一个继承了父母亲的优点的一种机器人，<span style="color:red; font-weight: bold;">意思就是说把本来是串联的变成一个并联的，让它既有串联的优点又有并联的优点。</span>',
       },
       {
         type: "text",
@@ -536,9 +535,9 @@ const newsInfo = ref([
     title: "张丹院士：无人机如何变成具身智能机器人 在海上稳稳降落",
     date: "2024-12-14 15:24:43",
     contentDif: [
-        {
+      {
         type: "video",
-        content:new_details_11_video,
+        content: new_details_11_video,
       },
       {
         type: "text",
@@ -572,14 +571,13 @@ const newsInfo = ref([
           "实验测试显示，该机器人能在60度斜坡、10厘米台阶和杂乱无章的地面上实现平稳降落。张丹还提到了水陆空三栖机器人的应用前景，这种机器人在地面行走、空中飞行和潜水方面都具有潜力，尤其在救援领域。",
       },
       { type: "image", content: new_details_11_02 },
-    ]
+    ],
   },
   {
     id: 12,
     title: "香港理工大学，我和南京一起闯天涯",
     date: "2024-07-08 19:01:39",
     contentDif: [
-       
       {
         type: "text",
         content:
@@ -593,8 +591,7 @@ const newsInfo = ref([
       },
       {
         type: "text",
-        content:
-          " 香港理工大学南京技术创新研究院12个合作项目：",
+        content: " 香港理工大学南京技术创新研究院12个合作项目：",
       },
       {
         type: "text",
@@ -613,8 +610,7 @@ const newsInfo = ref([
       },
       {
         type: "text",
-        content:
-          " 4.与苏州锐明新药研发有限公司合作项目：创新眼药开发",
+        content: " 4.与苏州锐明新药研发有限公司合作项目：创新眼药开发",
       },
       {
         type: "text",
@@ -697,7 +693,7 @@ const newsInfo = ref([
         type: "image",
         content: new_details_12_06,
       },
-    ]
+    ],
   },
 ]);
 // 根据 id 动态匹配教授信息
@@ -707,14 +703,15 @@ const showInfo = computed(() => {
 // 上一个下一个新闻
 // 计算上一个和下一个新闻
 const prevNextInfo = computed(() => {
-  const currentIndex = newsInfo.value.findIndex(item => item.id === id);
+  const currentIndex = newsInfo.value.findIndex((item) => item.id === id);
   return {
     prev: currentIndex > 0 ? newsInfo.value[currentIndex - 1] : null,
-    next: currentIndex < newsInfo.value.length - 1 ? newsInfo.value[currentIndex + 1] : null
+    next:
+      currentIndex < newsInfo.value.length - 1
+        ? newsInfo.value[currentIndex + 1]
+        : null,
   };
 });
-
-
 </script>
 <template>
   <div class="container">
@@ -727,7 +724,7 @@ const prevNextInfo = computed(() => {
         <p class="date">发布时间：{{ showInfo.date }}</p>
         <div class="main_content">
           <template v-for="(item, index) in showInfo.contentDif" :key="index">
-            <p v-if="item.type === 'text'"  v-html="item.content"></p>
+            <p v-if="item.type === 'text'" v-html="item.content"></p>
             <img
               v-else-if="item.type === 'image'"
               :src="item.content"
@@ -743,33 +740,25 @@ const prevNextInfo = computed(() => {
         </div>
       </div>
 
-
       <div class="options">
         <div class="next_previous">
           <p>
             上一个：
             <span v-if="!prevNextInfo.prev">没有了</span>
-            <RouterLink 
-              v-else 
-              :to="`/newsdetails/${prevNextInfo.prev.id}`"
-            >
+            <RouterLink v-else :to="`/newsdetails/${prevNextInfo.prev.id}`">
               {{ prevNextInfo.prev.title }}
             </RouterLink>
           </p>
           <p>
             下一个：
             <span v-if="!prevNextInfo.next">没有了</span>
-            <RouterLink 
-              v-else 
-              :to="`/newsdetails/${prevNextInfo.next.id}`"
-            >
+            <RouterLink v-else :to="`/newsdetails/${prevNextInfo.next.id}`">
               {{ prevNextInfo.next.title }}
             </RouterLink>
           </p>
         </div>
         <button @click="$router.go(-1)">返回</button>
       </div>
-
     </div>
   </div>
 </template>
@@ -782,11 +771,11 @@ const prevNextInfo = computed(() => {
   margin: 50px 0;
 }
 .content .news_content h2 {
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-    font-weight: bold;
-  }
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+}
 .content .news_content p {
   text-align: center;
   font-size: 14px;

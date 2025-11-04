@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
+import { stationInfo } from "./webMockInfos";
+import { getImgSrc } from "../utils/common";
 
 // 动态导入新闻图片
 const newsModules = import.meta.glob(
@@ -169,38 +171,6 @@ const startPatentScroll = () => {
     }
   }, 30);
 };
-
-// 新闻数据
-const news = ref([
-  {
-    id: 1,
-    date: "Apr2025",
-    day: "01",
-    title: "CNN报道中国人形机器人发展，港理大南京研究院院长张丹教授权威解读",
-    info: "香港理工大学南京技术创新研究院院长张丹教授接受美国有线电视新闻网（CNN）驻香港记者采访，结合自身研究经验与行业观察，深入探讨了中国机器人产业近年来的快速发展。",
-  },
-  {
-    id: 2,
-    date: "Mar2025",
-    day: "13",
-    title: "具身智能引领产业变革，智能机器人与机电一体化研究中心抢先布局",
-    info: "香港理工大学南京技术创新研究院下设“智能机器人与机电一体化研究中心”，正是深度结合南京地区产业优势，布局抢跑具身智能赛道。",
-  },
-  {
-    id: 3,
-    date: "Feb2025",
-    day: "28",
-    title: "香港理工大学校董会主席林大辉博士一行到访南京开展新春团拜",
-    info: "林大辉主席一行调研香港理工大学南京技术创新研究院，同南京研究院主要负责人举行了亲切座谈，详细听取了研究院近期工作进展汇报。",
-  },
-  {
-    id: 4,
-    date: "Feb2025",
-    day: "26",
-    title: "南京（香港）科技创新环境推介会：香港理工大学南京研究院的交流新篇",
-    info: "南京研究院张丹教授、曹建农教授、李恒教授、杜志伟博士、林全博士等科研负责人接受南京市政府颁发“紫金山英才卡”。",
-  },
-]);
 </script>
 
 <template>
@@ -250,21 +220,14 @@ const news = ref([
           </div>
         </div>
         <div class="department">
-          <div class="item" @click="goToCenter('center', 1)">
-            <img src="../assets/images/polyHfri/dep01.png" alt="dep01" />
-            <h3>生物医疗精密传感器研究所</h3>
-          </div>
-          <div class="item" @click="goToCenter('center', 2)">
-            <img src="../assets/images/polyHfri/dep02.png" alt="dep02" />
-            <h3>飞行器与低空导航研发中心</h3>
-          </div>
-          <div class="item" @click="goToCenter('center', 3)">
-            <img src="../assets/images/polyHfri/dep03.png" alt="dep03" />
-            <h3>北斗应用技术研发中心</h3>
-          </div>
-          <div class="item" @click="goToCenter('center', 4)">
-            <img src="../assets/images/polyHfri/dep04.png" alt="dep04" />
-            <h3>行星遥感与机器视觉研发中心</h3>
+          <div
+            class="item"
+            v-for="item in stationInfo"
+            :key="item.id"
+            @click="goToCenter('center', item.id)"
+          >
+            <img :src="getImgSrc(item.icon)" :alt="`dep0${item.id}`" />
+            <h3>{{ item.name }}</h3>
           </div>
         </div>
       </div>
@@ -480,13 +443,13 @@ const news = ref([
 .container .content .section1 .department {
   width: 1200px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
 .container .content .section1 .department .item {
   width: 25%;
+  margin: 15px 0;
   cursor: pointer;
 }
 

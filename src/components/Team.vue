@@ -2,11 +2,11 @@
 import { ref } from "vue";
 import pageBanner from "./banners/page-banner.vue";
 const mainTitle = ref("核心团队");
-import {professorsInfo} from './webMockInfos'
+import { professorsInfo } from "./webMockInfos";
 
-import { getImgSrc } from '../utils/common'
-console.log('professorsInfo', professorsInfo)
-const professorsList = ref(professorsInfo)
+import { getImgSrc } from "../utils/common";
+
+const professorsList = ref(professorsInfo);
 </script>
 
 <template>
@@ -20,11 +20,18 @@ const professorsList = ref(professorsInfo)
         <RouterLink to="/hexintuandui">核心团队</RouterLink>
       </div>
       <div class="professors_list">
-      <div v-for="item in professorsList" :key="item.index" class="professors_item" @click="$router.push(item.jumpTo)">
-        <img :src="getImgSrc(item.img)" :alt="item.imgAlt" />
-          <div class="professors_title"><a href="javascript:void(0);">{{item.title}}</a></div>
-          <div class="professors_info">{{ item.info || '' }}</div>
-      </div>
+        <div
+          v-for="item in professorsList"
+          :key="item.index"
+          class="professors_item"
+          @click="$router.push(item.jumpTo)"
+        >
+          <img :src="getImgSrc(item.img)" :alt="item.imgAlt" />
+          <div class="professors_title">
+            <a href="javascript:void(0);">{{ item.title }}</a>
+          </div>
+          <div class="professors_info">{{ item.info || "" }}</div>
+        </div>
         <!-- <div class="professors_item" @click="$router.push('/professor/6')">
           <img src="../assets/images/coreteam/people_RC01_02.jpg" alt="Prof. Jiyan DAI" />
           <div class="professors_title"><a href="javascript:void(0);">戴吉岩 教授</a></div>
@@ -70,7 +77,12 @@ const professorsList = ref(professorsInfo)
   font-size: 18px;
   text-decoration: none;
 }
-.container .content .professors_list .professors_item .professors_title a:hover {
+.container
+  .content
+  .professors_list
+  .professors_item
+  .professors_title
+  a:hover {
   text-decoration: underline;
   color: #9f2843;
   background: none;
