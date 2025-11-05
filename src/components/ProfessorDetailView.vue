@@ -12,6 +12,7 @@ import prof6 from "../assets/images/coreteam/people_RC01_02.jpg";
 import prof7 from "../assets/images/coreteam/people_RC01_03.jpg";
 import prof8 from "../assets/images/coreteam/people_RC02_01.jpg";
 import prof9 from "../assets/images/coreteam/people_RC02_03.jpg";
+import prof10 from "../assets/images/coreteam/people_RC10_01.png";
 
 const professorInfo = ref([
   {
@@ -31,7 +32,7 @@ const professorInfo = ref([
     name: "严锋 教授",
     releaseTime: "2024-12-18 15:45:01",
     picture: prof2,
-    position: "副院长 生物医疗精密传感器研究所主任",
+    position: "副院长 生物医疗传感器研发中心主任",
     details: [
       "香港理工大学有机电子讲座教授",
       "香港理工大学智能可穿戴系统研究院副院长",
@@ -105,6 +106,14 @@ const professorInfo = ref([
     picture: prof9,
     position: "",
     details: ["香港理工大学航空及民航工程学系助理教授"],
+  },
+  {
+    id: 10,
+    name: "蔡璟 教授",
+    releaseTime: "2024-12-19 10:25:20",
+    picture: prof10,
+    position: "肿瘤放疗疗效管理辅助机器人研发中心主任",
+    details: ["香港理工大学医疗科技与资讯学系系主任"],
   },
 ]);
 

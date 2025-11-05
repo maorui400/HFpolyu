@@ -26,7 +26,10 @@ const professorsList = ref(professorsInfo);
           class="professors_item"
           @click="$router.push(item.jumpTo)"
         >
-          <img :src="getImgSrc(item.img)" :alt="item.imgAlt" />
+          <div class="img">
+            <img :src="getImgSrc(item.img)" :alt="item.imgAlt" />
+          </div>
+
           <div class="professors_title">
             <a href="javascript:void(0);">{{ item.title }}</a>
           </div>
@@ -67,9 +70,14 @@ const professorsList = ref(professorsInfo);
   width: 25%;
   padding: 0 10px;
 }
+.container .content .professors_list .professors_item .img {
+  display: flex;
+  width: 100%;
+  height: 430px;
+  align-items: center;
+}
 .container .content .professors_list .professors_item img {
   width: 100%;
-  height: 100%;
   cursor: pointer;
 }
 .container .content .professors_list .professors_item .professors_title a {

@@ -1,64 +1,72 @@
+import { getImgSrc } from "../utils/common";
 const professorsInfo = [
   {
     title:'陈武 教授',
     info: '院长',
-    img: '../assets/images/coreteam/people_RC03_01.jpg',
+    img: getImgSrc('../assets/images/coreteam/people_RC03_01.jpg'),
     imgAlt:'Prof. Wu CHEN',
     jumpTo: '/professor/1'
   },
     {
     title:'严锋 教授',
-    info: '副院长 生物医疗精密传感器研究所主任',
-    img: '../assets/images/coreteam/people_RC01_01.jpg',
+    info: '副院长 生物医疗传感器研发中心主任',
+    img: getImgSrc('../assets/images/coreteam/people_RC01_01.jpg'),
     imgAlt:'Prof. Feng YAN',
     jumpTo: '/professor/2'
   },
     {
+    title:'戴吉岩 教授',
+    info: '香港理工大学应用物理学系教授',
+    img: getImgSrc('../assets/images/coreteam/people_RC01_02.jpg'),
+    imgAlt:'Prof. Jiyan DAI',
+    jumpTo: '/professor/6'
+  },
+    {
     title:'吴波 教授',
     info: '行星遥感与机器视觉研发中心',
-    img: '../assets/images/coreteam/people_RC04_01.jpg',
+    img: getImgSrc('../assets/images/coreteam/people_RC04_01.jpg'),
     imgAlt:'Prof. Bo WU',
     jumpTo: '/professor/3'
   },
     {
+    title:'蔡璟 教授',
+    info: '肿瘤放疗疗效管理辅助机器人研发中心主任',
+    img: getImgSrc('../assets/images/coreteam/people_RC10_01.png'),
+    imgAlt:'Prof. Jing CAI',
+    jumpTo: '/professor/10'
+  },
+    {
     title:'黄海龙 教授',
     info: '飞行器与低空导航研发中心主任',
-    img: '../assets/images/coreteam/people_RC02_02.jpg',
+    img: getImgSrc('../assets/images/coreteam/people_RC02_02.jpg'),
     imgAlt:'Prof. HaiLong HUANG',
     jumpTo: '/professor/4'
   },
     {
     title:'杨扬 博士',
     info: '北斗应用技术研发中心主任',
-    img: '../assets/images/coreteam/people_RC03_02.jpg',
+    img: getImgSrc('../assets/images/coreteam/people_RC03_02.jpg'),
     imgAlt:'Prof. Yang YANG',
     jumpTo: '/professor/5'
   },
     {
-    title:'戴吉岩 教授',
-    info: '',
-    img: '../assets/images/coreteam/people_RC01_02.jpg',
-    imgAlt:'Prof. Jiyan DAI',
-    jumpTo: '/professor/6'
-  },
-    {
     title:'孙雷 教授',
-    info: '',
-    img: '../assets/images/coreteam/people_RC01_03.jpg',
+    info: '香港理工大学生物医学工程学系教授',
+    img: getImgSrc('../assets/images/coreteam/people_RC01_03.jpg'),
     imgAlt:'Prof. Lei SUN',
     jumpTo: '/professor/7'
   },
     {
     title:'陈文华 教授',
-    info: '',
-    img: '../assets/images/coreteam/people_RC02_01.jpg',
+    info: '香港理工大学低空经济研究中心主任',
+    img: getImgSrc('../assets/images/coreteam/people_RC02_01.jpg'),
     imgAlt:'Prof. WenHua CHEN',
     jumpTo: '/professor/8'
   },
     {
     title:'蒋一平 教授',
-    info: '',
-    img: '../assets/images/coreteam/people_RC02_03.jpg',
+    info: '香港理工大学航空及民航工程学系助理教授',
+    img: getImgSrc('../assets/images/coreteam/people_RC02_03.jpg'),
     imgAlt:'Prof. YiPing JIANG',
     jumpTo: '/professor/9'
   },
@@ -68,45 +76,45 @@ const stationInfo = [
   {
     id:'2',
     name:'生物医疗精密传感器研发中心',
-    icon: '../assets/images/polyHfri/dep01.png',
-    img: '../assets/images/researchcenter/RC01.png',
+    icon: getImgSrc('../assets/images/polyHfri/dep01.png'),
+    img: getImgSrc('../assets/images/researchcenter/RC01.png'),
   }, 
   
 
 {
   id:'3',
-  icon: '../assets/images/polyHfri/dep07.png',
   name:'医用超声成像与传感器研发中心',
-  img: '../assets/images/researchcenter/RC01.png',
+  icon: getImgSrc('../assets/images/polyHfri/dep07.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC01.png'),
 }, 
 {
   id:'4',
-  icon: '../assets/images/polyHfri/dep06.png',
   name:'超声神经调控和超声诊疗中心',
-  img: '../assets/images/researchcenter/RC01.png',
+  icon:getImgSrc( '../assets/images/polyHfri/dep06.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC01.png'),
 }, 
  {
     id:'7',
-  icon: '../assets/images/polyHfri/dep05.png',
     name:'肿瘤放疗疗效管理辅助机器人研发中心',
-  img: '../assets/images/researchcenter/RC03.png'
+    icon: getImgSrc('../assets/images/polyHfri/dep05.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC03.png')
 },
   {
   id:'1',
   name:'北斗应用技术研发中心',
-  icon: '../assets/images/polyHfri/dep03.png',
-  img: '../assets/images/researchcenter/RC01.png',
+  icon: getImgSrc('../assets/images/polyHfri/dep03.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC01.png'),
 }, 
 {
   id:'5',
-  icon: '../assets/images/polyHfri/dep04.png',
   name:'行星遥感与机器视觉研发中心',
-  img: '../assets/images/researchcenter/RC01.png',
+  icon: getImgSrc('../assets/images/polyHfri/dep04.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC01.png'),
 }, {
     id:'6',
-  icon: '../assets/images/polyHfri/dep02.png',
     name:'飞行器与低空导航研发中心',
-  img: '../assets/images/researchcenter/RC02.png',
+    icon: getImgSrc('../assets/images/polyHfri/dep02.png'),
+  img: getImgSrc('../assets/images/researchcenter/RC02.png'),
 
 }
 ]
@@ -137,12 +145,31 @@ const contactList = [
     //position: "科研助理",
     email: "brandon-long.chen@polyu.edu.hk",
   },
+    {
+    department: "超声神经调控和超声诊疗中心",
+    name: "冼铨香 博士",
+    //position: "科研助理",
+    email: "quanxian@polyu.edu.hk",
+  },
+    {
+    department: "医用超声成像与传感研发中心",
+    name: "侯诗霖 博士",
+    //position: "科研助理",
+    email: "23040698r@connect.polyu.hk",
+  },
+    {
+    department: "肿瘤放疗疗效管理辅助机器人研发中心",
+    name: "马宗锐 博士",
+    //position: "科研助理",
+    email: "zachary.ma@polyu.edu.hk",
+  },
+
 ];
 
 // 2.采购招标信息
 const tenderingInfo = [
   {
-    title: "光刻机-HFRI2510003",
+    title: "光刻机",
     serialNO: "HFRI2510003",
     start: "2025年10月29日星期三",
     end: "2025年11月12日星期三下午3时整",
@@ -153,7 +180,7 @@ const tenderingInfo = [
       "如有兴趣应标，请发送营业执照副本及相应资质文件至联系邮箱中，谢谢！",
   },
   {
-    title: "镀膜仪等12种设备-HFRI2510004",
+    title: "镀膜仪等12种设备",
     serialNO: "HFRI2510004",
     start: "2025年10月31日星期五",
     end: "2025年11月14日星期五下午3时整",
@@ -162,7 +189,7 @@ const tenderingInfo = [
     contactEmail: ["yahui.cang@polyu.edu.hk"],
   },
     {
-    title: "混合信号示波器等12种设备-HFRI2510002",
+    title: "混合信号示波器等12种设备",
     serialNO: "HFRI2510002",
     start: "2025年10月13日星期一",
     end: "2025年10月27日星期一下午3时整",
@@ -171,7 +198,7 @@ const tenderingInfo = [
     contactEmail: ["qi.q.zhang@polyu.edu.hk"],
   },
     {
-    title: "开放编程超声成像系统-HFRI2510001",
+    title: "开放编程超声成像系统",
     serialNO: "HFRI2510001",
     start: "2025年10月10日星期五",
     end: "2025年10月24日星期五下午3时整",
@@ -180,7 +207,7 @@ const tenderingInfo = [
     contactEmail: ["qi.q.zhang@polyu.edu.hk"],
   },
     {
-    title: "GNSS信号回放仪-HFRI2509003",
+    title: "GNSS信号回放仪",
     serialNO: "HFRI2509003",
     start: "2025年9月29日星期一",
     end: "2025年10月16日星期四下午3时整",
@@ -189,7 +216,7 @@ const tenderingInfo = [
     contactEmail: ["qi.q.zhang@polyu.edu.hk"],
   },
     {
-    title: "室内动作捕捉系统-HFRI2509002",
+    title: "室内动作捕捉系统",
     serialNO: "HFRI2509002",
     start: "2025年9月26日星期五",
     end: "2025年10月17日星期五下午3时整",
@@ -198,7 +225,7 @@ const tenderingInfo = [
     contactEmail: ["qi.q.zhang@polyu.edu.hk"],
   },
     {
-    title: "3.6GHz频谱仪、矢量信号源和示波器-HFRI2509001",
+    title: "3.6GHz频谱仪、矢量信号源和示波器",
     serialNO: "HFRI2509001",
     start: "2025年9月15日星期一",
     end: "2025年9月24日星期三下午3时整",
@@ -230,12 +257,25 @@ const recruitmentInfo = [
     requirements: "合肥-庐阳区  |  5年及以上  |  硕士  |   1.2-2.4万",
     position_link: "https://jobs.51job.com/hefei-lyq/167165645.html",
   },
-  {
-    title: "市场宣传推广助理主管（IT及新媒体运营主管）",
+    {
+    title: "低空项目经理",
     requirements:
-      "合肥-庐阳区  |  5年及以上  |  本科  |  英文读写熟练  |   7千-1.2万",
-    position_link: "https://jobs.51job.com/hefei-lyq/168248691.html",
+      "合肥-庐阳区  |  5年及以上  |  本科  |  英语读写熟练",
+    position_link: "https://jobs.51job.com/hefei-lyq/168996822.html",
   },
+      {
+    title: "高级科研助理",
+    requirements:
+      "合肥-庐阳区  |  1年及以上  |  本科  |  英语读写熟练",
+    position_link: "https://jobs.51job.com/hefei-lyq/168625187.html",
+  },
+        {
+    title: "研究助理",
+    requirements:
+      "合肥-庐阳区  |  1年及以上  |  本科  |  英语简单沟通/读写",
+    position_link: "https://jobs.51job.com/hefei-lyq/168995692.html",
+  },
+  
 ];
 
 export { professorsInfo, stationInfo,contactList,tenderingInfo,recruitmentInfo }

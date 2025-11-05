@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
-import { stationInfo } from "./webMockInfos";
+import { stationInfo, professorsInfo } from "./webMockInfos";
 import { getImgSrc } from "../utils/common";
 
 // 动态导入新闻图片
@@ -72,54 +72,55 @@ const goToCenter = (dif, id) => {
     : router.push({ name: "newsdetails", params: { id } });
 };
 
-// 教授数据
-const professors = ref([
-  {
-    id: 1,
-    name: "陈武 教授",
-    title: "院长",
-    image: new URL(
-      "../assets/images/coreteam/people_RC03_01.jpg",
-      import.meta.url
-    ).href,
-  },
-  {
-    id: 2,
-    name: "严锋 教授",
-    title: "副院长 生物医疗精密传感器研究所主任",
-    image: new URL(
-      "../assets/images/coreteam/people_RC01_01.jpg",
-      import.meta.url
-    ).href,
-  },
-  {
-    id: 3,
-    name: "吴波 教授",
-    title: "行星遥感与机器视觉研发中心主任",
-    image: new URL(
-      "../assets/images/coreteam/people_RC04_01.jpg",
-      import.meta.url
-    ).href,
-  },
-  {
-    id: 4,
-    name: "黄海龙 教授",
-    title: "飞行器与低空导航研发中心主任",
-    image: new URL(
-      "../assets/images/coreteam/people_RC02_02.jpg",
-      import.meta.url
-    ).href,
-  },
-  // {
-  //   id: 5,
-  //   name: "杨扬 教授",
-  //   title: "北斗应用技术研发中心主任",
-  //   image: new URL(
-  //     "../assets/images/coreteam/people_RC03_02.jpg",
-  //     import.meta.url
-  //   ).href,
-  // },
-]);
+// 取前4名教授数据
+const professors = computed(() => professorsInfo.slice(0, 4));
+// const professors = ref([
+//   {
+//     id: 1,
+//     name: "陈武 教授",
+//     title: "院长",
+//     image: new URL(
+//       "../assets/images/coreteam/people_RC03_01.jpg",
+//       import.meta.url
+//     ).href,
+//   },
+//   {
+//     id: 2,
+//     name: "严锋 教授",
+//     title: "副院长 生物医疗传感器研发中心主任",
+//     image: new URL(
+//       "../assets/images/coreteam/people_RC01_01.jpg",
+//       import.meta.url
+//     ).href,
+//   },
+//   {
+//     id: 3,
+//     name: "吴波 教授",
+//     title: "行星遥感与机器视觉研发中心主任",
+//     image: new URL(
+//       "../assets/images/coreteam/people_RC04_01.jpg",
+//       import.meta.url
+//     ).href,
+//   },
+//   {
+//     id: 4,
+//     name: "黄海龙 教授",
+//     title: "飞行器与低空导航研发中心主任",
+//     image: new URL(
+//       "../assets/images/coreteam/people_RC02_02.jpg",
+//       import.meta.url
+//     ).href,
+//   },
+//   // {
+//   //   id: 5,
+//   //   name: "杨扬 教授",
+//   //   title: "北斗应用技术研发中心主任",
+//   //   image: new URL(
+//   //     "../assets/images/coreteam/people_RC03_02.jpg",
+//   //     import.meta.url
+//   //   ).href,
+//   // },
+// ]);
 
 const navigateToProfessor = (professorId) => {
   router.push({
@@ -251,10 +252,10 @@ const startPatentScroll = () => {
                 class="member_item"
                 @click="navigateToProfessor(professor.id)"
               >
-                <img :src="professor.image" :alt="professor.name" />
+                <img :src="professor.img" :alt="professor.name" />
                 <div class="member">
-                  <div class="member_title">{{ professor.name }}</div>
-                  <div class="member_info">{{ professor.title }}</div>
+                  <div class="member_title">{{ professor.title }}</div>
+                  <div class="member_info">{{ professor.info }}</div>
                 </div>
               </div>
             </div>
