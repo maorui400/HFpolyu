@@ -8,7 +8,7 @@ const router = useRouter();
 
 // import { getImgSrc } from "../utils/common";
 
-const mainTitle = ref("研究中心");
+const mainTitle = ref("研发中心");
 const departmentList = ref(stationInfo);
 var activeIndex = ref();
 const goToCenter = (id) => {
@@ -29,7 +29,7 @@ onMounted(() => {
       <div class="crumbs">
         <i class="iconfont icon-Homehomepagemenu"></i>
         <span>您当前的位置：</span>
-        <RouterLink to="/research/center/1">研究中心</RouterLink>
+        <RouterLink to="/research/center/1">研发中心</RouterLink>
       </div>
       <div class="content-body">
         <!-- 左侧菜单 -->

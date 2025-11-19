@@ -60,7 +60,7 @@ const handleSearch = () => {
             </transition> -->
           </li>
           <li><router-link to="/hexintuandui">核心团队</router-link></li>
-          <li><router-link to="/research/center/1">研究中心</router-link></li>
+          <li><router-link to="/research/center/1">研发中心</router-link></li>
           <!-- <li><router-link to="/news">新闻动态</router-link></li> -->
           <li
             @mouseenter="showContactSubMenu = true"
@@ -111,7 +111,7 @@ const handleSearch = () => {
         <div class="item"><router-link to="/">首页</router-link></div>
         <div class="item"><router-link to="/about">关于我们</router-link></div>
         <div class="item">
-          <router-link to="/research/center/1">研究中心</router-link>
+          <router-link to="/research/center/1">研发中心</router-link>
         </div>
         <!-- <div class="item"><router-link to="/news">新闻动态</router-link></div> -->
         <div class="item">
@@ -119,7 +119,7 @@ const handleSearch = () => {
         </div>
       </div>
       <div class="deparment">
-        <div class="title">研究中心</div>
+        <div class="title">研发中心</div>
         <div class="item" v-for="item in stationInfo" :key="item.id">
           <router-link :to="`/research/center/${item.id}`">{{
             item.name

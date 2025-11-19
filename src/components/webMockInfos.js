@@ -63,7 +63,7 @@ const professorsInfo = [
   },
     {
     title:'陈文华 教授',
-    info: '香港理工大学低空经济研究中心主任',
+    info: '香港理工大学低空经济研发中心主任',
     img: new URL(`../assets/images/coreteam/people_RC02_01.jpg`, import.meta.url).href,
     imgAlt:'Prof. WenHua CHEN',
     jumpTo: '/professor/8'
