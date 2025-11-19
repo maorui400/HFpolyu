@@ -4,8 +4,6 @@ import pageBanner from "./banners/page-banner.vue";
 const mainTitle = ref("核心团队");
 import { professorsInfo } from "./webMockInfos";
 
-import { getImgSrc } from "../utils/common";
-
 const professorsList = ref(professorsInfo);
 </script>
 
@@ -27,7 +25,7 @@ const professorsList = ref(professorsInfo);
           @click="$router.push(item.jumpTo)"
         >
           <div class="img">
-            <img :src="getImgSrc(item.img)" :alt="item.imgAlt" />
+            <img :src="item.img" :alt="item.imgAlt" />
           </div>
 
           <div class="professors_title">

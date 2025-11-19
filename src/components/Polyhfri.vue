@@ -4,6 +4,7 @@ import { useRouter } from "vue-router";
 import { stationInfo, professorsInfo } from "./webMockInfos";
 import { getImgSrc } from "../utils/common";
 
+const stationInfoList = ref(stationInfo);
 // 动态导入新闻图片
 const newsModules = import.meta.glob(
   "../assets/images/polyHfri/news*.{png,jpg}",
@@ -223,11 +224,11 @@ const startPatentScroll = () => {
         <div class="department">
           <div
             class="item"
-            v-for="item in stationInfo"
+            v-for="item in stationInfoList"
             :key="item.id"
             @click="goToCenter('center', item.id)"
           >
-            <img :src="getImgSrc(item.icon)" :alt="`dep0${item.id}`" />
+            <img :src="item.icon" :alt="`dep0${item.id}`" />
             <h3>{{ item.name }}</h3>
           </div>
         </div>

@@ -19,6 +19,7 @@ const centerImages01 = ref([]);
 const centerImages02 = ref([]);
 const centerImages03 = ref([]);
 const centerImages04 = ref([]);
+const centerImages05 = ref([]);
 
 // 导入 RC 文件夹中的图片
 const centerModules01 = import.meta.glob(
@@ -38,7 +39,10 @@ const centerModules04 = import.meta.glob(
   "../assets/images/researchcenter/RC04/*.{png,jpg}",
   { eager: true }
 );
-
+const centerModules05 = import.meta.glob(
+  "../assets/images/researchcenter/RC05/*.{png,jpg}",
+  { eager: true }
+);
 Object.values(centerModules01).forEach((module, index) => {
   centerImages01.value.push(module.default);
 });
@@ -54,12 +58,16 @@ Object.values(centerModules03).forEach((module, index) => {
 Object.values(centerModules04).forEach((module, index) => {
   centerImages04.value.push(module.default);
 });
+Object.values(centerModules05).forEach((module, index) => {
+  centerImages05.value.push(module.default);
+});
 
 // 计算属性
 const centerImageList01 = computed(() => centerImages01.value);
 const centerImageList02 = computed(() => centerImages02.value);
 const centerImageList03 = computed(() => centerImages03.value);
 const centerImageList04 = computed(() => centerImages04.value);
+const centerImageList05 = computed(() => centerImages05.value);
 
 // 路由id匹配数据信息
 const route = useRoute();
@@ -96,11 +104,11 @@ const centerInfo = ref([
   },
   {
     id: 2,
-    name: "生物医疗精密传感器研究所",
+    name: "生物医疗精密传感器研发中心",
     intro:
       "研究中心将聚焦生物医疗精密传感器技术的研发与产业化，重点突破可穿戴健康监测、无创医学影像、神经调控等前沿领域，深度融合材料科学、电子工程与生物医学技术，构建‘基础研究-技术转化-产业孵化’的全链条创新体系。通过深化政产学研合作，整合香港理工大学尖端科研资源与合肥市产业优势，致力打造国际一流的生物传感技术研发高地，为皖港两地及长三角地区培育高端医疗器械人才，推动精准医疗产业创新发展。",
     direction: [
-      "基于有机电化学晶体管，实现高灵敏度、低成本的无创血糖监测设备，推动移动医疗与个性化健康管理发展。",
+      "基于有机电化学晶体管，实现高灵敏度、低成本的无创唾液葡萄糖监测设备，推动移动医疗与个性化健康管理发展。",
       "开发便携式蛋白检测技术，建立高效检测方法，提升家庭健康监测及疾病早期筛查的便捷性。",
     ],
     video: center1Video || "",
@@ -151,7 +159,7 @@ const centerInfo = ref([
           "充分利用中心研究成果的优势，为合肥地区研究机构提供更多的科研支持。",
       },
     ],
-    img: "",
+    img: centerImageList05,
   },
   {
     id: 4,
