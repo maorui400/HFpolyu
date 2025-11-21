@@ -13,6 +13,7 @@ import centerTeam7 from "../assets/images/researchcenter/RCTeam/team7.png";
 import center1Video from "../assets/videos/center1.mp4";
 import center2Video from "../assets/videos/center2.mp4";
 import center3Video from "../assets/videos/center3.mp4";
+import center4Video from "../assets/videos/center4.mp4";
 
 // 动态导入所有图片
 const centerImages01 = ref([]);
@@ -82,6 +83,7 @@ const centerInfo = ref([
     intro:
       "北斗应用技术研发中心将致力于高精度导航定位与GNSS遥感技术的创新研究，重点突破水文监测、空域安全等领域的核心技术，积极联合当地政府部门及产业链企业构建产学研协同平台，推动北斗技术在智慧城市、飞行安全、防灾减灾等场景的示范应用，为合肥及长三角地区培育空天信息领域专业人才，助力国家卫星导航产业高质量发展。",
     direction: ["GNSS-R水平面监测站", "GNSS信号质量监测及干扰源定位系统"],
+    video: center4Video || "",
     teamPhoto: centerTeam6,
     developPlan: [
       {
