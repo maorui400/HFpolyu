@@ -80,7 +80,7 @@ const professorsInfo = [
 const stationInfo = [
   {
     id:'2',
-    name:'生物医疗精密传感器研发中心',
+    name:'生物传感器研发中心',
     icon: new URL(`../assets/images/polyHfri/dep01.png`, import.meta.url).href,
     // img: new URL(`../assets/images/researchcenter/RC01.png`, import.meta.url).href,
   }, 
@@ -133,7 +133,7 @@ const contactList = [
     email: "hailong.huang@polyu.edu.hk",
   },
   {
-    department: "生物医疗精密传感器研发中心",
+    department: "生物传感器研发中心",
     name: "刘红 博士",
     //position: "智能机器人与机电一体化研究中心副主任",
     email: "hhhong.liu@polyu.edu.hk",
