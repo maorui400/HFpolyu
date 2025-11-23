@@ -293,26 +293,26 @@ const jumpTo51 = (url) => {
   max-width: 100% ;
   box-sizing: border-box ;
 }
-
+.mobile .contact_content {
+  width: 100%;
+}
 /* 项目合作部分 */
 .mobile .contact_content .contact_list {
   flex-direction: column ;
   align-items: center ;
-  margin-top: 30px ;
-  width: 100% ;
-  max-width: 100% ;
+  width: auto ;
+  padding: 15px;
+  margin-top: 10px;
 }
 
 .mobile .contact_content .contact_item {
   width: 100% ;
-  max-width: 100% ;
-  padding: 15px ;
-  margin-bottom: 20px ;
   border: 1px solid #eee ;
-  border-radius: 8px ;
+  border-radius: 5px ;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) ;
   box-sizing: border-box ;
   text-align: center ;
+  margin-bottom: 10px;
 }
 
 .mobile .contact_content .contact_item h3 {
