@@ -207,7 +207,7 @@ const jumpTo51 = (url) => {
   flex-direction: column;
   align-items: flex-start;
   padding: 50px 0;
-  border-radius: 8px !important;
+  border-radius: 8px ;
   border: 1px solid;
   border-color: #dcdcdc;
   padding: 20px;
@@ -280,5 +280,184 @@ const jumpTo51 = (url) => {
   font-size: 20px;
   color: #fff;
   line-height: 40px;
+}
+/* 联系我们子页面移动端适配 */
+.mobile .container {
+  width: 100% ;
+  max-width: 100vw ;
+  box-sizing: border-box ;
+}
+
+.mobile .content {
+  width: 100% ;
+  max-width: 100% ;
+  box-sizing: border-box ;
+}
+
+/* 项目合作部分 */
+.mobile .contact_content .contact_list {
+  flex-direction: column ;
+  align-items: center ;
+  margin-top: 30px ;
+  width: 100% ;
+  max-width: 100% ;
+}
+
+.mobile .contact_content .contact_item {
+  width: 100% ;
+  max-width: 100% ;
+  padding: 15px ;
+  margin-bottom: 20px ;
+  border: 1px solid #eee ;
+  border-radius: 8px ;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) ;
+  box-sizing: border-box ;
+  text-align: center ;
+}
+
+.mobile .contact_content .contact_item h3 {
+  font-size: 18px ;
+  margin-bottom: 8px ;
+}
+
+.mobile .contact_content .contact_item p {
+  font-size: 14px ;
+  margin-bottom: 4px ;
+  line-height: 1.4 ;
+}
+
+/* 采购招标部分 */
+.mobile .contact_content .tendering_info {
+  width: auto ;
+  margin: 15px;
+  box-sizing: border-box ;
+}
+
+.mobile .contact_content .tendering_info h3 {
+  font-size: 16px ;
+  line-height: 1.4 ;
+  margin-bottom: 15px ;
+  text-align: left ;
+}
+
+.mobile .contact_content .tendering_info p {
+  font-size: 14px ;
+  margin-bottom: 8px ;
+  line-height: 1.4 ;
+  text-align: left ;
+}
+
+/* 人才招聘部分 */
+.mobile .contact_content .recruitment_positions {
+  width: 100% ;
+  max-width: 100% ;
+  margin-top: 30px ;
+  box-sizing: border-box ;
+}
+
+.mobile .contact_content .recruitment_positions .position_item {
+  width: auto ;
+  margin:0 15px;
+  margin-bottom: 15px ;
+  flex-direction: column ;
+}
+
+.mobile .position_info {
+  width: 100% ;
+  padding: 12px 15px ;
+  font-size: 14px ;
+  line-height: 1.5 ;
+  box-sizing: border-box ;
+}
+
+.mobile .position_info .position_title {
+  font-size: 16px ;
+  font-weight: bold ;
+  margin-bottom: 8px ;
+}
+
+.mobile .position_info .position_requirements {
+  font-size: 13px ;
+  margin: 8px 0 ;
+  line-height: 1.4 ;
+}
+
+.mobile .position_info .position_jumpIcon {
+  position: absolute ;
+  right: 15px ;
+  top: 50% ;
+  transform: translateY(-50%) ;
+  font-size: 18px ;
+}
+
+/* 介绍信息部分 */
+.mobile .intro_info {
+  padding: 15px 15px 0 15px;
+}
+.mobile .intro_info .title {
+  font-size: 18px ;
+  margin: 15px 0 8px 0 ;
+  text-align: left ;
+}
+
+.mobile .intro_info .content {
+  margin: 0 0 20px 0 ;
+  text-align: justify ;
+}
+
+.mobile .intro_info .content p {
+  font-size: 14px ;
+  line-height: 1.6 ;
+  margin-bottom: 10px ;
+  text-indent: 2em ;
+}
+
+/* 小标题样式 */
+.mobile .content .little_title {
+  margin-top: 15px ;
+  flex-direction: column ;
+  gap: 8px ;
+}
+
+.mobile .content .little_title p {
+  font-size: 16px ;
+  margin: 0 ;
+}
+
+.mobile .content .little_title span {
+  width: 40px ;
+  height: 2px ;
+}
+
+/* 主标题样式 */
+.mobile .content h2 {
+  font-size: 24px ;
+  margin-top: 30px ;
+  text-align: center ;
+}
+
+/* 确保所有文本内容不溢出 */
+.mobile .contact_content * {
+  max-width: 100% ;
+  word-wrap: break-word ;
+  overflow-wrap: break-word ;
+}
+
+/* 修复链接和按钮样式 */
+.mobile .contact_content .recruitment_positions .position_link a {
+  width: 120px ;
+  height: 36px ;
+  line-height: 36px ;
+  font-size: 14px ;
+}
+
+.mobile .contact_content .recruitment_positions .position_link span {
+  width: 36px ;
+  height: 36px ;
+}
+
+.mobile .contact_content .recruitment_positions .position_link span .iconfont {
+  line-height: 36px ;
+  font-size: 16px ;
 }
 </style>
