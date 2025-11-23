@@ -107,4 +107,72 @@ const professorsList = ref(professorsInfo);
     text-align: left;
   }
 }
+/* 核心团队移动端适配 */
+.mobile .container .content {
+  padding: 0 16px;
+  max-width: 100% ;
+  overflow-x: hidden ;
+}
+
+.mobile .container .content .crumbs {
+  font-size: 14px;
+  padding: 10px 0;
+  margin-top: 0;
+}
+
+.mobile .container .content .professors_list {
+  width: 100% ;
+  display: flex ;
+  flex-wrap: wrap ;
+  justify-content: space-between ;
+  gap: 16px 0 ;
+  box-sizing: border-box ;
+}
+
+.mobile .container .content .professors_list .professors_item {
+  width: calc(50% - 8px) ;
+  padding: 0 ;
+  margin-bottom: 0 ;
+  box-sizing: border-box ;
+}
+
+.mobile .container .content .professors_list .professors_item .img {
+  height: 180px ;
+  width: 100% ;
+  overflow: hidden ;
+  border-radius: 8px ;
+}
+
+.mobile .container .content .professors_list .professors_item img {
+  width: 100% ;
+  height: 100% ;
+  object-fit: cover ;
+  display: block ;
+}
+
+.mobile .container .content .professors_list .professors_item .professors_title {
+  margin-top: 12px ;
+  padding: 0 4px ;
+}
+
+.mobile .container .content .professors_list .professors_item .professors_title a {
+  font-size: 15px ;
+  font-weight: 600 ;
+  color: #333 ;
+  text-decoration: none ;
+  display: block ;
+  line-height: 1.4 ;
+  text-align: center ;
+}
+
+.mobile .container .content .professors_list .professors_item .professors_info {
+  font-size: 13px ;
+  line-height: 1.5 ;
+  height: 5.2em ;
+  padding: 8px 4px 0 4px ;
+  color: #666 ;
+  overflow: hidden ;
+  margin-top: 0 ;
+  text-align: center ;
+}
 </style>

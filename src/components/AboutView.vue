@@ -229,4 +229,86 @@ const HFIntntroduction4 = ref(
   font-size: 14px;
   line-height: 1.6;
 }
+
+/*移動端適配*/
+.mobile .container .content {
+  padding: 0 16px;
+}
+
+.mobile .container .content .introduction {
+  width: 100% ;
+  margin-top: 30px ;
+}
+
+.mobile .container .content .introduction .title {
+  font-size: 20px ;
+  padding-bottom: 8px;
+}
+
+.mobile .container .content .introduction p {
+  font-size: 15px ;
+  line-height: 1.6 ;
+  margin-top: 20px ;
+  text-align: justify ;
+}
+
+.mobile .container .content .introduction .college_pic,
+.mobile .container .content .introduction .sign_pic {
+  width: 100% ;
+  min-width: 100% ;
+  min-height: 200px ;
+  margin-top: 30px ;
+}
+
+.mobile .container .content .development_history {
+  margin: 40px 0 20px 0 ;
+}
+
+.mobile .container .content .development_history h2 {
+  font-size: 24px ;
+}
+
+.mobile .container .content .development_history span {
+  width: 40px ;
+  margin-top: 10px ;
+}
+
+/* 时间线移动端适配 */
+.mobile .timeline-container {
+  width: 100% ;
+  margin: 30px auto ;
+  padding: 0 10px ;
+}
+
+.mobile .timeline-container::before {
+  left: 20px ;
+}
+
+.mobile .timeline-item {
+  flex-direction: column ;
+  margin-bottom: 40px ;
+}
+
+.mobile .timeline-node {
+  left: 20px ;
+  top: 0 ;
+}
+
+.mobile .timeline-item.left .timeline-content,
+.mobile .timeline-item.right .timeline-content {
+  width: 100% ;
+  text-align: left ;
+  padding: 0 0 0 50px ;
+  margin-left: 0 ;
+}
+
+.mobile .timeline-content h3 {
+  font-size: 18px ;
+  margin-bottom: 8px ;
+}
+
+.mobile .timeline-content p {
+  font-size: 14px ;
+  line-height: 1.5 ;
+}
 </style>

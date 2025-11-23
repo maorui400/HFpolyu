@@ -1,19 +1,28 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
 import { stationInfo } from "./components/webMockInfos";
+import { detectDevice } from "../src/utils/common";
 const route = useRoute(); // 获取当前路由信息
 const router = useRouter();
 const showSubMenu = ref(false);
 const showContactSubMenu = ref(false);
 const isMainLoading = ref(true);
 const searchKeyword = ref(""); // 搜索关键词
+// 移動端設備判斷
+const isMobile = detectDevice();
+// console.log("外面監聽：", isMobile, store.state.device.isMobile);
 
-// 模拟内容加载
 onMounted(() => {
+  // loading效果模拟内容加载
   setTimeout(() => {
     isMainLoading.value = false;
   }, 1000); // 后面可以配合接口数据请求的加载逻辑
+  // 防止移动端左右滑动
+  if (detectDevice()) {
+    document.body.style.overflowX = 'hidden';
+    document.documentElement.style.overflowX = 'hidden';
+  }
 });
 
 // 处理搜索功能
@@ -31,56 +40,57 @@ const handleSearch = () => {
 </script>
 
 <template>
-  <!-- 头部 -->
-  <header>
-    <div class="wrapper">
-      <div class="logo">
-        <router-link to="/"
-          ><img
-            src="../src/assets/images/PolyU-Hefei logo_hori.png"
-            alt="section_logo"
-        /></router-link>
-      </div>
-      <div class="menu">
-        <ul>
-          <li><router-link to="/">首页</router-link></li>
-          <li
-            @mouseenter="showSubMenu = true"
-            @mouseleave="showSubMenu = false"
-            @click="showSubMenu = false"
-            class="about-menu"
-          >
-            <router-link to="/about">关于我们</router-link>
+  <adapter :class="{ mobile: isMobile, desktop: !isMobile }">
+    <!-- 头部 -->
+    <header>
+      <div class="wrapper">
+        <div class="logo">
+          <router-link to="/"
+            ><img
+              src="../src/assets/images/PolyU-Hefei logo_hori.png"
+              alt="section_logo"
+          /></router-link>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><router-link to="/">首页</router-link></li>
+            <li
+              @mouseenter="showSubMenu = true"
+              @mouseleave="showSubMenu = false"
+              @click="showSubMenu = false"
+              class="about-menu"
+            >
+              <router-link to="/about">关于我们</router-link>
 
-            <!-- 二级导航 -->
-            <!-- <transition name="fade">
+              <!-- 二级导航 -->
+              <!-- <transition name="fade">
               <div v-show="showSubMenu" class="submenu">
                 
               </div>
             </transition> -->
-          </li>
-          <li><router-link to="/hexintuandui">核心团队</router-link></li>
-          <li><router-link to="/research/center/1">研发中心</router-link></li>
-          <!-- <li><router-link to="/news">新闻动态</router-link></li> -->
-          <li
-            @mouseenter="showContactSubMenu = true"
-            @mouseleave="showContactSubMenu = false"
-            @click="showContactSubMenu = false"
-            class="contact-menu"
-          >
-            <router-link to="/contact">联系我们</router-link>
-            <!-- 联系我们二级导航 -->
-            <transition name="fade">
-              <div v-show="showContactSubMenu" class="submenu">
-                <!-- <router-link to="/contactdetails/1">项目合作</router-link> -->
-                <router-link to="/contactdetails/2">采购招标</router-link>
-                <router-link to="/contactdetails/3">人才招聘</router-link>
-              </div>
-            </transition>
-          </li>
-        </ul>
-        <!-- 站内搜索 -->
-        <!-- <div class="search-container">
+            </li>
+            <li><router-link to="/hexintuandui">核心团队</router-link></li>
+            <li><router-link to="/research/center/1">研发中心</router-link></li>
+            <!-- <li><router-link to="/news">新闻动态</router-link></li> -->
+            <li
+              @mouseenter="showContactSubMenu = true"
+              @mouseleave="showContactSubMenu = false"
+              @click="showContactSubMenu = false"
+              class="contact-menu"
+            >
+              <router-link to="/contact">联系我们</router-link>
+              <!-- 联系我们二级导航 -->
+              <transition name="fade">
+                <div v-show="showContactSubMenu" class="submenu">
+                  <!-- <router-link to="/contactdetails/1">项目合作</router-link> -->
+                  <router-link to="/contactdetails/2">采购招标</router-link>
+                  <router-link to="/contactdetails/3">人才招聘</router-link>
+                </div>
+              </transition>
+            </li>
+          </ul>
+          <!-- 站内搜索 -->
+          <!-- <div class="search-container">
           <input
             type="text"
             class="search-input"
@@ -90,66 +100,69 @@ const handleSearch = () => {
           />
           <i class="iconfont icon-a-searchbar-search" @click="handleSearch"></i>
         </div> -->
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- 内容主体部分: key属性用于更新路由视图(教授信息的更新) -->
-  <main :key="route.params.id || route.query.query">
-    <!-- 加载效果 -->
-    <div v-if="isMainLoading" class="main-loading">
-      <div class="loading-spinner"></div>
-    </div>
-    <!-- 路由视图 -->
-    <RouterView v-show="!isMainLoading" />
-  </main>
-  <!-- 底部 -->
-  <footer>
-    <div class="wrapper">
-      <div class="navgation">
-        <div class="title">导航</div>
-        <div class="item"><router-link to="/">首页</router-link></div>
-        <div class="item"><router-link to="/about">关于我们</router-link></div>
-        <div class="item">
-          <router-link to="/research/center/1">研发中心</router-link>
-        </div>
-        <!-- <div class="item"><router-link to="/news">新闻动态</router-link></div> -->
-        <div class="item">
-          <router-link to="/contact">联系我们</router-link>
-        </div>
+    <!-- 内容主体部分: key属性用于更新路由视图(教授信息的更新) -->
+    <main :key="route.params.id || route.query.query">
+      <!-- 加载效果 -->
+      <div v-if="isMainLoading" class="main-loading">
+        <div class="loading-spinner"></div>
       </div>
-      <div class="deparment">
-        <div class="title">研发中心</div>
-        <div class="item" v-for="item in stationInfo" :key="item.id">
-          <router-link :to="`/research/center/${item.id}`">{{
-            item.name
-          }}</router-link>
-          <!-- <a href="javascript:void(0);">生物医疗精密传感器研究所</a> -->
-        </div>
-      </div>
-      <div class="contactinfo">
-        <div class="title">联系我们</div>
-        <div class="item">
-          地址：安徽省合肥市庐阳区清河路868号庐阳大数据产业园4号楼及5号楼
-        </div>
-        <!-- <div class="item">电话：院行政办 025-86963105</div> -->
-      </div>
-      <div class="media">
-        <div class="title">关注我们</div>
-        <div class="item" id="item">
-          <div class="qrcode">
-            <img src="./assets/images/QRcode.jpg" alt="" />
+      <!-- 路由视图 -->
+      <RouterView v-show="!isMainLoading" />
+    </main>
+    <!-- 底部 -->
+    <footer>
+      <div class="wrapper">
+        <div class="navgation">
+          <div class="title">导航</div>
+          <div class="item"><router-link to="/">首页</router-link></div>
+          <div class="item">
+            <router-link to="/about">关于我们</router-link>
           </div>
-          <div class="notice">
-            <p>微信公众号/视频号/小红书</p>
-            <p>搜索关注：香港理工大学合肥研究院</p>
+          <div class="item">
+            <router-link to="/research/center/1">研发中心</router-link>
+          </div>
+          <!-- <div class="item"><router-link to="/news">新闻动态</router-link></div> -->
+          <div class="item">
+            <router-link to="/contact">联系我们</router-link>
           </div>
         </div>
+        <div class="deparment">
+          <div class="title">研发中心</div>
+          <div class="item" v-for="item in stationInfo" :key="item.id">
+            <router-link :to="`/research/center/${item.id}`">{{
+              item.name
+            }}</router-link>
+            <!-- <a href="javascript:void(0);">生物医疗精密传感器研究所</a> -->
+          </div>
+        </div>
+        <div class="contactinfo">
+          <div class="title">联系我们</div>
+          <div class="item">
+            地址：安徽省合肥市庐阳区清河路868号庐阳大数据产业园4号楼及5号楼
+          </div>
+          <!-- <div class="item">电话：院行政办 025-86963105</div> -->
+        </div>
+        <div class="media">
+          <div class="title">关注我们</div>
+          <div class="item" id="item">
+            <div class="qrcode">
+              <img src="./assets/images/QRcode.jpg" alt="" />
+            </div>
+            <div class="notice">
+              <p>微信公众号/视频号/小红书</p>
+              <p>搜索关注：香港理工大学合肥研究院</p>
+            </div>
+          </div>
 
-        <div class="item">版权归港理大（合肥）技术创新研究院有限公司所有</div>
+          <div class="item">版权归港理大（合肥）技术创新研究院有限公司所有</div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </adapter>
 </template>
 
 <style scoped>
@@ -485,5 +498,147 @@ footer .wrapper .media #item .notice p {
     display: flex;
     place-items: center;
   }
+}
+/* ========== 移动端样式 .mobile前綴設定  ========== */
+.mobile header .wrapper {
+  /* 移动端头部应更紧凑，280px 太高了 */
+  height: auto;
+  padding: 10px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 100%;
+}
+
+.mobile header .wrapper .logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.mobile header .menu {
+  width: 100%;
+  min-width: auto;
+  justify-content: center;
+}
+
+.mobile header .menu ul {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mobile header .menu ul li {
+  margin: 8px 12px;
+}
+
+.mobile header .menu ul li::after {
+  display: none; /* 移动端通常不用分隔线 */
+}
+
+.mobile header .menu ul li a {
+  line-height: 1.4;
+  font-size: 16px;
+  padding: 6px 12px;
+}
+/* 如果保留，调整位置避免溢出 */
+.mobile .submenu {
+  left: 0;
+  right: 0;
+  width: auto;
+  text-align: center;
+}
+
+.mobile footer {
+  width: 100%;
+  padding: 20px 0;
+  height: auto;
+}
+
+.mobile footer .wrapper {
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column; /* 移动端变成纵向布局 */
+}
+
+/* 模块竖向排布 */
+.mobile footer .deparment,
+.mobile footer .contactinfo,
+.mobile footer .media {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.mobile footer .navgation{
+  display: flex;
+  justify-content: space-between;
+  min-height: 30px;
+  width: 100%;
+}
+/* 标题 */
+.mobile footer .title {
+  width: 50px;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+/* 文本内容 */
+.mobile footer .item {
+  font-size: 14px;
+  margin-top: 6px;
+}
+.mobile footer .deparment{
+  margin: 0;
+  min-height: 250px;
+}
+.mobile footer .deparment .title{
+  width: 80px;
+  height: 22px;
+}
+.mobile footer .deparment .item{
+  padding-left: 2em;
+}
+.mobile footer .contactinfo{
+  margin: 0;
+  min-height: 50px;
+}
+.mobile footer .contactinfo .title{
+  width: 80px;
+  height: 22px;
+}
+/* 二维码缩小 */
+.mobile footer .qrcode {
+  width: 90px;
+  height: 90px;
+}
+.mobile footer .media{
+  margin: 0;
+  min-height: 80px;
+}
+.mobile footer .media .title{
+  display: none;
+}
+.mobile footer .media .item {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mobile footer .media #item .notice {
+  width: 100%;
+  height: 110px;
+}
+
+.mobile footer .media #item .notice p {
+  font-size: 12px;
+  width: auto;
+}
+
+/* 加载 spinner 保持通用即可，无需重复 */
+
+/* 通用 main 布局 */
+main {
+  flex: 1;
+  position: relative;
+  min-height: calc(100vh - 300px);
+  display: flex;
+  justify-content: center;
 }
 </style>

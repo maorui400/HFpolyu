@@ -79,4 +79,80 @@ const mainTitle = ref("联系我们");
   font-weight: bold;
   color: #2c3e50;
 }
+/* 联系我们移动端适配 */
+.mobile .content {
+  padding: 0 16px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile .content h2 {
+  font-size: 24px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.mobile .content span {
+  width: 40px;
+  margin-top: 10px;
+}
+
+.mobile .content .contact_list {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mobile .content .contact_item {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.mobile .content .contact_item h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.mobile .content .contact_item p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.mobile .content .contact_map {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.mobile .content .contact_map img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.mobile .content .contact_map p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.mobile .content .contact_map font {
+  font-weight: bold;
+  color: #2c3e50;
+}
 </style>

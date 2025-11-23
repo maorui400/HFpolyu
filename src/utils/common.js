@@ -15,3 +15,14 @@ export const getImgSrc = (path) => {
 
   return _url
 }
+// 移動端設備判斷 chen_2025/11/23
+export const detectDevice = () => {
+  // 方法1：基于 userAgent（主流）
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const mobileKeywords = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
+  
+  // 方法2：辅助判断屏幕宽度（增强鲁棒性）
+  const isSmallScreen = window.innerWidth <= 768;
+  
+  return mobileKeywords.test(userAgent) || isSmallScreen;
+};

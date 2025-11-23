@@ -90,4 +90,8 @@ const props = defineProps({
   bottom: 0px;
   transform: translate(1px, 0) rotate(225deg);
 }
+/*移動端適配*/
+.mobile .container .banner{
+  margin-top: 0;
+}
 </style>

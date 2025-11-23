@@ -130,4 +130,113 @@ onMounted(() => {
 .content .research_department .department_item:hover p {
   background: #9f2843;
 }
+
+/* 研发中心父组件移动端适配 - 修复溢出问题 */
+.mobile .container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.mobile .content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.mobile .content .crumbs{
+  margin-top: 0;
+}
+.mobile .content-body {
+  display: flex;
+  flex-direction: column;
+  width: 100% ;
+  max-width: 100% ;
+  padding-top: 15px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 左侧菜单在移动端放在上面 */
+.mobile .content-body__left {
+  display: flex;
+  width: 100% ;
+  max-width: 100% ;
+  padding-right: 0 ;
+  flex-direction: column;
+  order: 1;
+  margin-bottom: 20px;
+}
+
+.mobile .content-body__left .department_item {
+  width: 100% ;
+  max-width: 100% ;
+  padding: 12px 20px ;
+  margin-bottom: 8px ;
+  box-sizing: border-box;
+}
+
+/* 右侧内容在移动端放在下面 - 修复溢出 */
+.mobile .content-body__right {
+  display: block ;
+  width: 100% ;
+  max-width: 100% ;
+  order: 2;
+  box-sizing: border-box;
+}
+
+/* 强制重置嵌套组件中的所有固定宽度 */
+.mobile .content-body__right > * {
+  width: 100% ;
+  max-width: 100% ;
+  box-sizing: border-box;
+}
+
+
+/* 修复缩略图导航 */
+.mobile .thumbnail-navigation {
+  width: 100% ;
+  max-width: 100% ;
+  padding: 0 5px ;
+  box-sizing: border-box;
+}
+
+.mobile .thumbnail-container {
+  max-width: 100% ;
+  box-sizing: border-box;
+}
+
+
+/* 修复所有文本容器 */
+.mobile .center_title,
+.mobile .research_direction,
+.mobile .develop_plan {
+  width: 100% ;
+  max-width: 100% ;
+  box-sizing: border-box;
+}
+
+.mobile .center_info .center_text .center_title h3 {
+  font-size: 18px ;
+  text-align: center ;
+  width: 100% ;
+  max-width: 100% ;
+  word-wrap: break-word ;
+}
+
+.mobile .center_info .center_text .center_title p,
+.mobile .center_info .center_text .research_direction p,
+.mobile .center_info .center_text .develop_plan p,
+.mobile .center_info .center_text .develop_plan span {
+  font-size: 14px ;
+  line-height: 1.5 ;
+  text-align: left ;
+  width: 100% ;
+  max-width: 100% ;
+  word-wrap: break-word ;
+  overflow-wrap: break-word ;
+}
+
+
 </style>

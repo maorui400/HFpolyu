@@ -514,7 +514,7 @@ const startPatentScroll = () => {
 
 .container .content .section2 .hexintuandui h2 {
   font-size: 40px;
-  color: #fff !important;
+  color: #fff ;
   text-align: center;
 }
 
@@ -785,5 +785,356 @@ const startPatentScroll = () => {
 .container .content .section4 .news_item .news_content .news_title a:hover {
   color: #9f2843;
   text-decoration: underline;
+}
+/*移動端樣式*/
+.mobile .content--section__title {
+  width: 100% ;
+  padding: 0 ;
+  font-size: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 左侧标题容器（带色条） */
+.mobile .content--section__title > div:first-child {
+  position: relative;
+  padding-left: 12px; /* 色条宽度 + 间距 */
+  font-weight: bold;
+  color: #000;
+}
+
+.mobile .content--section__title > div:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #aa0235;
+}
+
+/* 右侧“查看更多” */
+.mobile .conmon_style_link {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.mobile .conmon_style_link a {
+  color: #9f2843;
+  text-decoration: none;
+}
+
+.mobile .conmon_style_link a:hover {
+  color: #666;
+}
+
+/* 如果某个 section 没有“查看更多”，右侧为空，标题自然靠左 */
+/* —— 这由结构决定，CSS 无需特殊处理 */
+
+/* ========== Section 内容容器统一内边距 ========== */
+
+.mobile .container .content {
+  margin-top: 20px;
+  padding: 0 16px;
+  max-width: 100% ;
+}
+
+/* ========== Section1：研究院介绍 & 研究中心 ========== */
+
+.mobile .content .section1 {
+  text-align: left ;
+  align-items: flex-start ;
+}
+
+.mobile .content .section1 .title {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.mobile .content .section1 .title h2 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.mobile .content .section1 .title::after {
+  display: none; /* 移动端用左侧色条替代居中横线 */
+}
+
+.mobile .content .section1 .introduction p {
+  width: 100% ;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 12px 0 24px 0;
+  color: #595959;
+}
+
+/* 研究中心 */
+.mobile .content .section1 .department {
+  width: 100% ;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.mobile .content .section1 .department .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile .content .section1 .department .item:last-child {
+  border-bottom: none;
+}
+
+.mobile .content .section1 .department img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.mobile .content .section1 .department h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.mobile .content .section1 .department .item:hover h3 {
+  color: #9f2843;
+}
+/* ========== 所有 section 标题统一适配 ========== */
+@media (max-width: 768px) {
+  .mobile .content--section__title {
+    width: 100% ;
+    padding: 0 ;
+    font-size: 20px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .mobile .content--section__title > div:first-child {
+    position: relative;
+    padding-left: 12px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .mobile .content--section__title > div:first-child::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #aa0235;
+  }
+
+  .mobile .conmon_style_link {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .mobile .conmon_style_link a {
+    color: #9f2843;
+    text-decoration: none;
+  }
+
+  .mobile .conmon_style_link a:hover {
+    color: #666;
+  }
+
+  /* 内容容器统一内边距 */
+  .mobile .container .content {
+    margin-top: 20px;
+    padding: 0 16px;
+    max-width: 100% ;
+  }
+
+  /* Section1：研究院介绍 & 研究中心 */
+  .mobile .content .section1 {
+    text-align: left ;
+    align-items: flex-start ;
+  }
+
+  .mobile .content .section1 .title {
+    text-align: left;
+    margin-bottom: 12px;
+  }
+
+  .mobile .content .section1 .title h2 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .mobile .content .section1 .title::after {
+    display: none;
+  }
+
+  .mobile .content .section1 .introduction p {
+    width: 100% ;
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 12px 0 24px 0;
+    color: #595959;
+  }
+
+  /* 研究中心 */
+  .mobile .content .section1 .department {
+    width: 100% ;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .mobile .content .section1 .department .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile .content .section1 .department .item:last-child {
+    border-bottom: none;
+  }
+
+  .mobile .content .section1 .department img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  .mobile .content .section1 .department .item{
+    margin: 0 auto;
+  }
+  .mobile .content .section1 .department h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+  }
+
+  .mobile .content .section1 .department .item:hover h3 {
+    color: #9f2843;
+  }
+
+ /* Section2：核心团队 - 移动端适配 */
+.mobile .content .section2 {
+  width: 100% ;
+  min-width: 100% ;
+  min-height: auto ; /* 修复：移除固定高度 */
+  margin-top: 0px ;
+  padding: 0 16px ;
+  height: auto ; /* 修复：高度自适应 */
+}
+
+.mobile .content .section2 .hexintuandui .member_list_container {
+  width: 100% ;
+  min-height: auto ; /* 修复：移除固定高度 */
+  position: relative ;
+  height: auto ; /* 修复：高度自适应 */
+}
+
+.mobile .content .section2 .hexintuandui .member_list {
+  position: relative ;
+  left: 0 ;
+  top: 0 ;
+  transform: none ;
+  display: grid ;
+  grid-template-columns: repeat(2, 1fr) ;
+  gap: 16px ;
+  width: 100% ;
+  height: auto ; /* 修复：高度自适应 */
+}
+
+.mobile .content .section2 .hexintuandui .member_list .member_item {
+  width: 100% ;
+  padding: 0 ;
+  margin-bottom: 16px ;
+  position: relative ;
+  overflow: hidden ;
+  height: auto ; /* 修复：高度自适应 */
+}
+
+.mobile .content .section2 .hexintuandui .member_list .member_item img {
+  width: 100% ;
+  height: 200px ;
+  object-fit: cover ;
+  display: block ;
+}
+
+.mobile .content .section2 .hexintuandui .member_list .member_item .member {
+  position: absolute ;
+  bottom: 0 ;
+  left: 0 ;
+  width: 100% ;
+  min-height: 92.6px ;
+  padding: 12px 8px ;
+  background: rgba(0, 0, 0, 0.7) ;
+  color: #fff ;
+  box-sizing: border-box ;
+}
+
+/* 确保所有相关元素高度自适应 */
+.mobile .content .section2 * {
+  height: auto ;
+  min-height: auto ;
+}
+  /* Section3：专利证书 */
+  .mobile .content .section3 {
+    margin: 20px 0 ;
+    width: 100% ;
+    padding: 0 16px ;
+    text-align: left ;
+    align-items: flex-start ;
+  }
+
+  .mobile .content .section3 .patent_list {
+    width: 100% ;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+    min-height: auto;
+  }
+
+  .mobile .content .section3 .patent_container {
+    display: flex;
+    position: relative;
+    will-change: transform;
+    align-items: flex-start;
+  }
+
+  .mobile .content .section3 .patent_item {
+    flex: 0 0 160px;
+    height: 160px;
+    padding: 0 6px;
+    box-sizing: border-box;
+  }
+
+  .mobile .content .section3 .patent_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  .mobile .overlay_content {
+    display: none ;
+  }
 }
 </style>
