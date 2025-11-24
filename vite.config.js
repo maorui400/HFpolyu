@@ -7,8 +7,8 @@ import vueDevTools from "vite-plugin-vue-devtools";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  // base: './', // 使用相对路径
-  base: "/polyU_hefei", // 必须与部署目录完全一致
+  base: '/', // 使用相对路径
+  // base: "/polyU_hefei", // 必须与部署目录完全一致
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
