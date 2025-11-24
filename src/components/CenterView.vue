@@ -314,9 +314,9 @@ const currentIndex = ref(0);
 //   );
 // };
 
-// 缩略图分页
+// 缩略图分页：起始index，默認縮略圖數量
 const thumbStartIndex = ref(0);
-const thumbsPerPage = 4;
+const thumbsPerPage = 3;
 
 // 左右按钮状态
 const canPrev = computed(() => currentIndex.value > 0);
@@ -666,7 +666,7 @@ const navigateToCenter = (centerId) => {
   color: #000;
   margin-bottom: 10px;
 }
-/* 特别修复嵌套组件中的问题元素 */
+/*==============移動端樣式==============*/
 .mobile .center_info {
   display: block ;
   margin: 10px 0 0 0 ;
@@ -687,8 +687,6 @@ const navigateToCenter = (centerId) => {
   padding: 0 ;
   box-sizing: border-box;
 }
-
-/* 修复图片容器 - 主要溢出源 */
 .mobile .center_pic_box {
   width: 100% ;
   max-width: 100% ;
@@ -716,7 +714,6 @@ const navigateToCenter = (centerId) => {
   height: 100% ;
   object-fit: contain ;
 }
-/* 修复视频 */
 .mobile .center-video {
   width: 100% ;
   max-width: 100% ;
@@ -730,7 +727,6 @@ const navigateToCenter = (centerId) => {
   height: 180px ;
 }
 
-/* 修复团队照片 */
 .mobile .center-teamPhoto {
   width: 100% ;
   max-width: 100% ;
@@ -743,7 +739,6 @@ const navigateToCenter = (centerId) => {
   max-width: 100% ;
   height: auto ;
 }
-/* 修复移动端缩略图指示器 */
 .mobile .thumbnail-wrapper {
   position: relative ;
   width: 70px ;

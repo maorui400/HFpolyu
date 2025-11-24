@@ -241,10 +241,10 @@ const newsInfo = ref([
         content:
           "研究院将建设国际高端科技创新平台，沉淀一批自主可控的核心技术，形成一批新兴产业领域领军企业及科技创新人才队伍。目前，研究院还在围绕低空经济、智能制造装备、医疗健康机器人等项目拓展合作。",
       },
-      {
-        type: "video",
-        content: new_details_6_video,
-      },
+      // {
+      //   type: "video",
+      //   content: new_details_6_video,
+      // },
     ],
   },
   {
@@ -535,10 +535,10 @@ const newsInfo = ref([
     title: "张丹院士：无人机如何变成具身智能机器人 在海上稳稳降落",
     date: "2024-12-14 15:24:43",
     contentDif: [
-      {
-        type: "video",
-        content: new_details_11_video,
-      },
+      // {
+      //   type: "video",
+      //   content: new_details_11_video,
+      // },
       {
         type: "text",
         content:
@@ -807,5 +807,10 @@ const prevNextInfo = computed(() => {
 }
 .content .news_content .main_content video {
   width: 80%;
+}
+/*==============移動端樣式==============*/
+.mobile .content{
+  width: 100%;
+  padding: 15px;
 }
 </style>

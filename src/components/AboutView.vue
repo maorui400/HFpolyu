@@ -230,7 +230,7 @@ const HFIntntroduction4 = ref(
   line-height: 1.6;
 }
 
-/*移動端適配*/
+/*==============移動端樣式==============*/
 .mobile .container .content {
   padding: 0 16px;
 }

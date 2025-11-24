@@ -79,7 +79,7 @@ const mainTitle = ref("联系我们");
   font-weight: bold;
   color: #2c3e50;
 }
-/* 联系我们移动端适配 */
+/*==============移動端樣式==============*/
 .mobile .content {
   padding: 0 16px;
   width: 100%;

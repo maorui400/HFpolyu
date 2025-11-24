@@ -130,8 +130,7 @@ onMounted(() => {
 .content .research_department .department_item:hover p {
   background: #9f2843;
 }
-
-/* 研发中心父组件移动端适配 - 修复溢出问题 */
+/*==============移動端樣式==============*/
 .mobile .container {
   width: 100%;
   max-width: 100vw;

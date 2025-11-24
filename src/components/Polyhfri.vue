@@ -786,7 +786,7 @@ const startPatentScroll = () => {
   color: #9f2843;
   text-decoration: underline;
 }
-/*移動端樣式*/
+/*==============移動端樣式==============*/
 .mobile .content--section__title {
   width: 100% ;
   padding: 0 ;
@@ -798,7 +798,7 @@ const startPatentScroll = () => {
   gap: 12px;
 }
 
-/* 左侧标题容器（带色条） */
+/* 左侧标题容器 */
 .mobile .content--section__title > div:first-child {
   position: relative;
   padding-left: 12px; /* 色条宽度 + 间距 */
@@ -831,10 +831,7 @@ const startPatentScroll = () => {
   color: #666;
 }
 
-/* 如果某个 section 没有“查看更多”，右侧为空，标题自然靠左 */
-/* —— 这由结构决定，CSS 无需特殊处理 */
-
-/* ========== Section 内容容器统一内边距 ========== */
+/* Section 内容容器统一内边距*/
 
 .mobile .container .content {
   margin-top: 20px;
@@ -842,11 +839,12 @@ const startPatentScroll = () => {
   max-width: 100% ;
 }
 
-/* ========== Section1：研究院介绍 & 研究中心 ========== */
+/* Section1：研究院介绍 & 研究中心 */
 
 .mobile .content .section1 {
   text-align: left ;
   align-items: flex-start ;
+  width: 100%;
 }
 
 .mobile .content .section1 .title {
@@ -877,6 +875,8 @@ const startPatentScroll = () => {
   width: 100% ;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 0px;
+  padding:0 15px;
   gap: 16px;
 }
 
@@ -910,19 +910,7 @@ const startPatentScroll = () => {
 .mobile .content .section1 .department .item:hover h3 {
   color: #9f2843;
 }
-/* ========== 所有 section 标题统一适配 ========== */
-@media (max-width: 768px) {
-  .mobile .content--section__title {
-    width: 100% ;
-    padding: 0 ;
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-  }
-
+/*所有 section 标题统一适配 */
   .mobile .content--section__title > div:first-child {
     position: relative;
     padding-left: 12px;
@@ -1037,7 +1025,6 @@ const startPatentScroll = () => {
   min-width: 100% ;
   min-height: auto ; /* 修复：移除固定高度 */
   margin-top: 0px ;
-  padding: 0 16px ;
   height: auto ; /* 修复：高度自适应 */
 }
 
@@ -1097,7 +1084,6 @@ const startPatentScroll = () => {
   .mobile .content .section3 {
     margin: 20px 0 ;
     width: 100% ;
-    padding: 0 16px ;
     text-align: left ;
     align-items: flex-start ;
   }
@@ -1136,5 +1122,5 @@ const startPatentScroll = () => {
   .mobile .overlay_content {
     display: none ;
   }
-}
+
 </style>

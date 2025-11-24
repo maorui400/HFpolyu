@@ -213,4 +213,31 @@ const lastPage = () => {
   font-weight: bold;  
   text-decoration: underline;  
 }  
+
+/*==============移動端樣式==============*/
+.mobile .content{
+  width: 100%;
+  padding: 15px;
+}
+.mobile .crumbs{
+  margin-top: 0px;
+}
+ .news-list {  
+  display: flex;  
+  flex-wrap: wrap;  
+  justify-content: space-between;  
+  width: 100%;  
+  margin-top: 5px;
+}  
+.mobile .news-item {  
+  width: 48.5%;  
+  margin-bottom: 20px;  
+  cursor: pointer;
+}  
+.mobile .news-item img {  
+  width: 100%;  
+  height:150px;  
+  object-fit: cover;  
+}  
+
 </style>  
