@@ -14,6 +14,8 @@ import center1Video from "../assets/videos/center1.mp4";
 import center2Video from "../assets/videos/center2.mp4";
 import center3Video from "../assets/videos/center3.mp4";
 import center4Video from "../assets/videos/center4.mp4";
+import center5Video from "../assets/videos/center5.mp4";
+import center6Video from "../assets/videos/center6.mp4";
 
 // 动态导入所有图片
 const centerImages01 = ref([]);
@@ -204,6 +206,7 @@ const centerInfo = ref([
       "“AI + 航天” 互动教育产品",
     ],
     teamPhoto: centerTeam4,
+    video: center6Video || "",
     developPlan: [
       {
         item: "产学研结合",
@@ -229,6 +232,7 @@ const centerInfo = ref([
       "降落伞辅助无人机紧急精准迫降：致力于开发供无人机安全迫降的降落伞模块，用于降低无人机坠毁带来的公共安全风险和财产损失。",
     ],
     teamPhoto: centerTeam5,
+    video: center5Video || "",
     developPlan: [
       {
         item: "深化产学研合作",
