@@ -23,6 +23,7 @@ const centerImages02 = ref([]);
 const centerImages03 = ref([]);
 const centerImages04 = ref([]);
 const centerImages05 = ref([]);
+const centerImages07 = ref([]);
 
 // 导入 RC 文件夹中的图片
 const centerModules01 = import.meta.glob(
@@ -46,6 +47,10 @@ const centerModules05 = import.meta.glob(
   "../assets/images/researchcenter/RC05/*.{png,jpg}",
   { eager: true }
 );
+const centerModules07 = import.meta.glob(
+  "../assets/images/researchcenter/RC07/*.{png,jpg}",
+  { eager: true }
+);
 Object.values(centerModules01).forEach((module, index) => {
   centerImages01.value.push(module.default);
 });
@@ -64,6 +69,9 @@ Object.values(centerModules04).forEach((module, index) => {
 Object.values(centerModules05).forEach((module, index) => {
   centerImages05.value.push(module.default);
 });
+Object.values(centerModules07).forEach((module, index) => {
+  centerImages07.value.push(module.default);
+});
 
 // 计算属性
 const centerImageList01 = computed(() => centerImages01.value);
@@ -71,6 +79,7 @@ const centerImageList02 = computed(() => centerImages02.value);
 const centerImageList03 = computed(() => centerImages03.value);
 const centerImageList04 = computed(() => centerImages04.value);
 const centerImageList05 = computed(() => centerImages05.value);
+const centerImageList07 = computed(() => centerImages07.value);
 
 // 路由id匹配数据信息
 const route = useRoute();
@@ -200,7 +209,7 @@ const centerInfo = ref([
     id: 5,
     name: "行星遥感与机器视觉研发中心",
     intro:
-      "香港理工大学合肥技术创新研究院行星遥感与机器视觉研发中心聚焦两大核心方向：一是产学研协同创新，依托香港理工大学在行星遥感领域的国际领先技术，与合肥及周边科研机构共建联合实验室，推动航天领域的科研合作。二是航天科普教育，通过打造沉浸式航天科普教育平台、开发「AI+航天」互动式教育产品，将香港理工大学的航天资源转化为科普教育内容，与合肥及周边企业合作，推动航天科普教育发展。",
+      "行星遥感与机器视觉研发中心作为推动航天科技与区域创新深度融合的重要平台，以「产学研协同创新」和「航天科普教育，为双轮驱动，致力于将香港理工大学在遥感技术、机器视觉等领域的前沿科研成果转化为服务国家航天战略和地方经济发展的实际生产力。中心聚焦两大核心方向：一是产学研协同创新，依托香港理工大学在行星遥感领域的国际领先技术，与合肥及周边科研机构共建联合实验室，推动航天领域的科研合作。二是航天科普教育，通过打造沉浸式航天科普教育平台、开发「AI+航天」互动式教育产品，将香港理工大学的航天资源转化为科普教育内容，与合肥及周边企业合作，推动航天科普教育发展。",
     direction: [
       "“月球 / 火星着陆区虚拟实境”VR 产品",
       "“AI + 航天” 互动教育产品",
@@ -272,7 +281,7 @@ const centerInfo = ref([
           "率先推进放射性皮炎评估模块的产品化，通过与多家顶级肿瘤医院建立临床示范中心，验证技术可靠性，并逐步拓展至口腔黏膜炎、放射性肺炎等并发症的评估模块。",
       },
     ],
-    img: "",
+    img: centerImageList07,
   },
 ]);
 
