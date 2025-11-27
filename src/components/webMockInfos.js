@@ -88,7 +88,7 @@ const stationInfo = [
 
 {
   id:'3',
-  name:'医用超声成像与传感器研发中心',
+  name:'医用超声成像与传感研发中心',
       icon: new URL(`../assets/images/polyHfri/dep07.png`, import.meta.url).href},
 {
   id:'4',

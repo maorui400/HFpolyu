@@ -139,7 +139,7 @@ const centerInfo = ref([
   },
   {
     id: 3,
-    name: "医用超声成像与传感器研发中心",
+    name: "医用超声成像与传感研发中心",
     intro:
       "医用超声成像与传感研发中心将围绕超声换能器、超声成像算法与超声成像系统三条主线开展协同攻关：在换能器方面聚焦高性能、便携化探头的材料与制造技术；在成像算法方面面向新型阵列与应用场景，发展高分辨率、低噪声的超声成像方法；在系统方面推进超声模拟前端、FPGA/SoC信号处理及与移动终端的融合，形成从核心器件到整机的完整技术链。研发中心将依托合港优势资源，服务医疗超声设备国产化与精准医疗应用，推动高端超声可视化医疗器械在临床各科及基层的落地。",
     direction: [
@@ -329,7 +329,7 @@ const nextThumbs = () => {
   if (canNext.value) {
     currentIndex.value++;
     currentImage.value = currentCenterImages.value[currentIndex.value];
-    
+
     // 更新缩略图起始位置，确保当前图片在可见范围内
     if (currentIndex.value >= thumbStartIndex.value + thumbsPerPage) {
       thumbStartIndex.value = currentIndex.value - thumbsPerPage + 1;
@@ -341,7 +341,7 @@ const prevThumbs = () => {
   if (canPrev.value) {
     currentIndex.value--;
     currentImage.value = currentCenterImages.value[currentIndex.value];
-    
+
     // 更新缩略图起始位置，确保当前图片在可见范围内
     if (currentIndex.value < thumbStartIndex.value) {
       thumbStartIndex.value = currentIndex.value;
@@ -355,7 +355,7 @@ const setCurrentImage = (image) => {
   currentIndex.value = currentCenterImages.value.findIndex(
     (img) => img.id === image.id
   );
-  
+
   // 当点击缩略图时，也更新起始位置确保选中图片在可见范围内
   if (currentIndex.value >= thumbStartIndex.value + thumbsPerPage) {
     thumbStartIndex.value = currentIndex.value - thumbsPerPage + 1;
@@ -668,106 +668,105 @@ const navigateToCenter = (centerId) => {
 }
 /*==============移動端樣式==============*/
 .mobile .center_info {
-  display: block ;
-  margin: 10px 0 0 0 ;
+  display: block;
+  margin: 10px 0 0 0;
   padding: 0;
-  width: 100% ;
-  height: auto ;
-  max-width: 100% ;
-  padding: 0 ;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  
 }
 
 .mobile .center_info .center_text {
-  display: block ;
-  width: 100% ;
-  max-width: 100% ;
-  padding: 0 ;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
   box-sizing: border-box;
 }
 .mobile .center_pic_box {
-  width: 100% ;
-  max-width: 100% ;
-  margin: 15px 0 ;
+  width: 100%;
+  max-width: 100%;
+  margin: 15px 0;
   box-sizing: border-box;
 }
 
 .mobile .center_pic {
-  width: 100% ;
-  max-width: 100% ;
+  width: 100%;
+  max-width: 100%;
   box-sizing: border-box;
 }
 
 .mobile .main-image-container {
-  width: 100% ;
-  max-width: 100% ;
-  height: 200px ;
-  margin-bottom: 10px ;
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
   box-sizing: border-box;
 }
 
 .mobile .main-image {
-  width: 100% ;
-  max-width: 100% ;
-  height: 100% ;
-  object-fit: contain ;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .mobile .center-video {
-  width: 100% ;
-  max-width: 100% ;
-  margin: 15px 0 ;
+  width: 100%;
+  max-width: 100%;
+  margin: 15px 0;
   box-sizing: border-box;
 }
 
 .mobile .center-video video {
-  width: 100% ;
-  max-width: 100% ;
-  height: 180px ;
+  width: 100%;
+  max-width: 100%;
+  height: 180px;
 }
 
 .mobile .center-teamPhoto {
-  width: 100% ;
-  max-width: 100% ;
-  margin: 15px 0 ;
+  width: 100%;
+  max-width: 100%;
+  margin: 15px 0;
   box-sizing: border-box;
 }
 
 .mobile .center-teamPhoto img {
-  width: 100% ;
-  max-width: 100% ;
-  height: auto ;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .mobile .thumbnail-wrapper {
-  position: relative ;
-  width: 70px ;
-  height: 52px ;
-  flex-shrink: 0 ;
+  position: relative;
+  width: 70px;
+  height: 52px;
+  flex-shrink: 0;
 }
 
 .mobile .thumbnail-indicator {
-  position: absolute ;
-  top: -8px ; /* 调整位置 */
-  left: 50% ;
-  transform: translateX(-50%) ;
-  width: 0 ;
-  height: 0 ;
-  border-left: 6px solid transparent ; /* 缩小尺寸 */
-  border-right: 6px solid transparent ;
-  border-bottom: 6px solid black ;
-  z-index: 1 ;
-  display: block ; /* 确保显示 */
+  position: absolute;
+  top: -8px; /* 调整位置 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent; /* 缩小尺寸 */
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid black;
+  z-index: 1;
+  display: block; /* 确保显示 */
 }
 
 .mobile .thumbnail-active .thumbnail {
-  border: 2px solid #333 ; /* 增加边框宽度使其更明显 */
+  border: 2px solid #333; /* 增加边框宽度使其更明显 */
 }
 
 .mobile .thumbnail {
-  width: 100% ;
-  height: 100% ;
-  object-fit: cover ;
-  border-radius: 4px ; /* 添加圆角 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px; /* 添加圆角 */
 }
 </style>
