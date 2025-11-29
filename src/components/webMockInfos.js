@@ -134,15 +134,15 @@ const contactList = [
   },
   {
     department: "生物传感器研发中心",
-    name: "刘红 博士",
+    name: "赵泽宇 博士",
     //position: "智能机器人与机电一体化研究中心副主任",
-    email: "hhhong.liu@polyu.edu.hk",
+    email: "ze-yu.zhao@polyu.edu.hk ",
   },
   {
     department: "行星遥感与机器视觉研发中心",
-    name: "陈龙 博士",
+    name: "朱佳明 博士",
     //position: "科研助理",
-    email: "brandon-long.chen@polyu.edu.hk",
+    email: "jiaming11.zhu@polyu.edu.hk",
   },
     {
     department: "超声神经调控和超声诊疗中心",
