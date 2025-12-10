@@ -20,8 +20,8 @@ onMounted(() => {
   }, 1000); // 后面可以配合接口数据请求的加载逻辑
   // 防止移动端左右滑动
   if (detectDevice()) {
-    document.body.style.overflowX = 'hidden';
-    document.documentElement.style.overflowX = 'hidden';
+    document.body.style.overflowX = "hidden";
+    document.documentElement.style.overflowX = "hidden";
   }
 });
 
@@ -70,8 +70,10 @@ const handleSearch = () => {
             </transition> -->
             </li>
             <li><router-link to="/hexintuandui">核心团队</router-link></li>
-            <li><router-link to="/research/center/1">研发中心</router-link></li>
-            <!-- <li><router-link to="/news">新闻动态</router-link></li> -->
+            <li>
+              <router-link to="/research/center/1">研发实验室</router-link>
+            </li>
+            <li><router-link to="/news">新闻动态</router-link></li>
             <li
               @mouseenter="showContactSubMenu = true"
               @mouseleave="showContactSubMenu = false"
@@ -123,7 +125,7 @@ const handleSearch = () => {
             <router-link to="/about">关于我们</router-link>
           </div>
           <div class="item">
-            <router-link to="/research/center/1">研发中心</router-link>
+            <router-link to="/research/center/1">研发实验室</router-link>
           </div>
           <!-- <div class="item"><router-link to="/news">新闻动态</router-link></div> -->
           <div class="item">
@@ -131,7 +133,7 @@ const handleSearch = () => {
           </div>
         </div>
         <div class="deparment">
-          <div class="title">研发中心</div>
+          <div class="title">研发实验室</div>
           <div class="item" v-for="item in stationInfo" :key="item.id">
             <router-link :to="`/research/center/${item.id}`">{{
               item.name
@@ -567,7 +569,7 @@ footer .wrapper .media #item .notice p {
   width: 100%;
   margin-bottom: 20px;
 }
-.mobile footer .navgation{
+.mobile footer .navgation {
   display: flex;
   justify-content: space-between;
   min-height: 30px;
@@ -585,22 +587,22 @@ footer .wrapper .media #item .notice p {
   font-size: 14px;
   margin-top: 6px;
 }
-.mobile footer .deparment{
+.mobile footer .deparment {
   margin: 0;
   min-height: 250px;
 }
-.mobile footer .deparment .title{
+.mobile footer .deparment .title {
   width: 80px;
   height: 22px;
 }
-.mobile footer .deparment .item{
+.mobile footer .deparment .item {
   padding-left: 2em;
 }
-.mobile footer .contactinfo{
+.mobile footer .contactinfo {
   margin: 0;
   min-height: 50px;
 }
-.mobile footer .contactinfo .title{
+.mobile footer .contactinfo .title {
   width: 80px;
   height: 22px;
 }
@@ -609,11 +611,11 @@ footer .wrapper .media #item .notice p {
   width: 90px;
   height: 90px;
 }
-.mobile footer .media{
+.mobile footer .media {
   margin: 0;
   min-height: 80px;
 }
-.mobile footer .media .title{
+.mobile footer .media .title {
   display: none;
 }
 .mobile footer .media .item {

@@ -32,7 +32,7 @@ const professorInfo = ref([
     name: "严锋 教授",
     releaseTime: "2024-12-18 15:45:01",
     picture: prof2,
-    position: "副院长 生物医疗传感器研发中心主任",
+    position: "副院长 生物医疗传感器研发实验室负责人",
     details: [
       "香港理工大学有机电子讲座教授",
       "香港理工大学智能可穿戴系统研究院副院长",
@@ -46,7 +46,7 @@ const professorInfo = ref([
     name: "吴波 教授",
     releaseTime: "2024-12-18 15:49:32",
     picture: prof3,
-    position: "行星遥感与机器视觉研发中心主任",
+    position: "行星遥感与机器视觉研发实验室负责人",
     details: [
       "香港理工大学土地测量与地理资讯学系教授",
       "香港理工大学张心瑜空间科学教授",
@@ -59,7 +59,7 @@ const professorInfo = ref([
     name: "黄海龙 助理教授",
     releaseTime: "2024-12-18 16:01:00",
     picture: prof4,
-    position: "飞行器与低空导航研发中心主任",
+    position: "飞行器与低空导航研发实验室负责人",
     details: ["香港理工大学航空及民航工程学系助理教授"],
   },
   {
@@ -67,7 +67,7 @@ const professorInfo = ref([
     name: "杨扬 研究助理教授",
     releaseTime: "2024-12-19 10:21:58",
     picture: prof5,
-    position: "北斗应用技术研发中心主任",
+    position: "北斗应用技术研发实验室负责人",
     details: ["香港理工大学土地测量与地理资讯学系研究助理教授"],
   },
 
@@ -112,7 +112,7 @@ const professorInfo = ref([
     name: "蔡璟 教授",
     releaseTime: "2024-12-19 10:25:20",
     picture: prof10,
-    position: "肿瘤放疗疗效管理辅助机器人研发中心主任",
+    position: "肿瘤放疗疗效管理辅助机器人研发实验室负责人",
     details: ["香港理工大学医疗科技与资讯学系系主任"],
   },
 ]);

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import pageBanner from "./banners/page-banner.vue";
+import introVideo from "../assets/videos/intro-video.mp4";
 const mainTitle = ref("关于我们");
 
 const timelineData = ref([
@@ -14,11 +15,11 @@ const timelineData = ref([
     content: "研究院正式落地合肥庐阳大数据产业园",
     position: "right",
   },
-  // {
-  //   year: "2024年9月",
-  //   content: "首批科研团队入驻",
-  //   position: "left"
-  // },
+  {
+    year: "2025年12月",
+    content: "研究院正式揭牌投运",
+    position: "left",
+  },
   // {
   //   year: "2025年",
   //   content: "计划建成省级工程技术研究中心",
@@ -38,10 +39,10 @@ const HFIntntroduction2 = ref(
   "签约仪式于 10 月 25 日在合肥市举行。理大副校长（研究及创新）赵汝恒教授及合肥市庐阳区区政府副区长时坤先生代表双方签署协议，并由理大协理副校长（内地研究拓展）董澄教授、理大土地测量及地理资讯学系主任陈武教授、理大国家轨道交通电气化与自动化工程技术研究中心（香港分中心）主任倪一清教授，以及合肥市庐阳区区委书记高强先生、合肥市庐阳区区委办主任朱华军先生、合肥市庐阳区庐阳经济开发区管委会主任沉兵先生见证。"
 );
 const HFIntntroduction3 = ref(
-  "为进一步推动空天信息与生物医疗精密传感等领域创新发展，促进科技成果产业化，推进合肥市科技创新与产业升级，香港理工大学与合肥市政府，庐阳区政府合作共建港理大（合肥）技术创新研究院有限公司。"
+  "2025年12月4日，由中共合肥市委科学技术委员会办公室(市科学技术局)、合肥市庐阳区人民政府指导，香港理工大学、香港理工大学合肥技术创新研究院与庐阳区科学技术局共同主办，合肥庐阳国有资本控股集团有限公司支持的香港理工大学合肥技术创新研究院揭牌投运活动在合肥隆重举行。"
 );
 const HFIntntroduction4 = ref(
-  "将聚焦空天信息与生物医疗精密传感两大领域，开展技术研发、平台建设及成果转化，致力于打造国际一流的产学研合作转化基地。"
+  "合肥市委副书记、市长罗云峰，安徽省科技厅厅长赵明，市政府副市长何逢阳，市政协副主席、市政府秘书长罗平，全国政协委员、香港理工大学校董会主席林大辉，香港理工大学高级副校长（研究及创新）赵汝恒，香港理工大学协理副校长（内地研究拓展）董澄，庐阳区和市直有关部门负责人，香港理工大学校友，以及中国科学技术大学、合肥工业大学、安徽大学、合肥理工学院、中科院合肥物质科学研究院等多个高校、科研院所和华米等科技型企业、中国建设银行等金融机构的嘉宾企业代表出席活动，见证香港理工大学合肥技术创新研究院正式揭牌投运。"
 );
 </script>
 
@@ -61,23 +62,26 @@ const HFIntntroduction4 = ref(
         <p>
           {{ HKRIIntroduction2 }}
         </p>
-        <div class="college_pic"></div>
+        <div class="img college_pic"></div>
       </div>
       <!-- 合肥院简介 -->
       <div class="introduction">
         <div class="title">
           <span class="name">港理工(合肥)技术创新研究院简介</span>
         </div>
+        <div class="video">
+          <video :src="introVideo" controls class="intro-video"></video>
+        </div>
         <p>{{ HFIntntroduction1 }}</p>
         <p>{{ HFIntntroduction2 }}</p>
-        <div class="sign_pic"></div>
-        <!-- <p>
+        <div class="img sign_pic"></div>
+        <p>
           {{ HFIntntroduction3 }}
         </p>
         <p>
           {{ HFIntntroduction4 }}
         </p>
-        <div class="college_pic"></div> -->
+        <div class="img meeting_pic"></div>
       </div>
       <div class="development_history">
         <h2>研究院建设历程</h2>
@@ -128,24 +132,26 @@ const HFIntntroduction4 = ref(
   margin-top: 30px;
 }
 .container .content .introduction .college_pic {
-  width: 100%;
-  min-width: 1200px;
-  min-height: 400px;
   background: url("../assets/images/about/HKDoor.jpg");
-  background-size: cover;
-  background-position: center;
-  margin-top: 50px;
 }
 .container .content .introduction .sign_pic {
+  background: url("../assets/images/about/sign.jpg");
+}
+.container .content .introduction .meeting_pic {
+  background: url("../assets/images/news/newsitem/details_1_04.jpg");
+}
+.container .content .introduction .img {
   width: 100%;
   min-width: 1200px;
-  min-height: 400px;
-  background: url("../assets/images/about/sign.jpg");
+  min-height: 600px;
   background-size: cover;
   background-position: center;
   margin-top: 50px;
 }
 
+.container .content .intro-video {
+  margin-top: 15px;
+}
 .container .content .development_history {
   text-align: center;
   margin: 50px 0 30px 0;
@@ -231,84 +237,87 @@ const HFIntntroduction4 = ref(
 }
 
 /*==============移動端樣式==============*/
+.mobile .container {
+  width: 100%;
+}
 .mobile .container .content {
   padding: 0 16px;
 }
 
 .mobile .container .content .introduction {
-  width: 100% ;
-  margin-top: 30px ;
+  width: 100%;
+  margin-top: 30px;
 }
 
 .mobile .container .content .introduction .title {
-  font-size: 20px ;
+  font-size: 20px;
   padding-bottom: 8px;
 }
 
 .mobile .container .content .introduction p {
-  font-size: 15px ;
-  line-height: 1.6 ;
-  margin-top: 20px ;
-  text-align: justify ;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: justify;
 }
 
 .mobile .container .content .introduction .college_pic,
 .mobile .container .content .introduction .sign_pic {
-  width: 100% ;
-  min-width: 100% ;
-  min-height: 200px ;
-  margin-top: 30px ;
+  width: 100%;
+  min-width: 100%;
+  min-height: 200px;
+  margin-top: 30px;
 }
 
 .mobile .container .content .development_history {
-  margin: 40px 0 20px 0 ;
+  margin: 40px 0 20px 0;
 }
 
 .mobile .container .content .development_history h2 {
-  font-size: 24px ;
+  font-size: 24px;
 }
 
 .mobile .container .content .development_history span {
-  width: 40px ;
-  margin-top: 10px ;
+  width: 40px;
+  margin-top: 10px;
 }
 
 /* 时间线移动端适配 */
 .mobile .timeline-container {
-  width: 100% ;
-  margin: 30px auto ;
-  padding: 0 10px ;
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 10px;
 }
 
 .mobile .timeline-container::before {
-  left: 20px ;
+  left: 20px;
 }
 
 .mobile .timeline-item {
-  flex-direction: column ;
-  margin-bottom: 40px ;
+  flex-direction: column;
+  margin-bottom: 40px;
 }
 
 .mobile .timeline-node {
-  left: 20px ;
-  top: 0 ;
+  left: 20px;
+  top: 0;
 }
 
 .mobile .timeline-item.left .timeline-content,
 .mobile .timeline-item.right .timeline-content {
-  width: 100% ;
-  text-align: left ;
-  padding: 0 0 0 50px ;
-  margin-left: 0 ;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0 50px;
+  margin-left: 0;
 }
 
 .mobile .timeline-content h3 {
-  font-size: 18px ;
-  margin-bottom: 8px ;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .mobile .timeline-content p {
-  font-size: 14px ;
-  line-height: 1.5 ;
+  font-size: 14px;
+  line-height: 1.5;
 }
 </style>
