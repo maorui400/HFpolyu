@@ -5,7 +5,6 @@ const mainTitle = ref("新闻动态");
 import { newsInfo } from "./webMockInfos";
 import new_01 from "../assets/images/news/new_01.jpg";
 import new_02 from "../assets/images/news/new_02.jpg";
-import new_03 from "../assets/images/news/new_03.jpg";
 
 const news_List = ref([
   {
@@ -19,12 +18,6 @@ const news_List = ref([
     title: "具身智能引领产业变革，智能机器人与机电一体化研究中心抢先布局",
     date: "2022-05-15",
     img: new_02,
-  },
-  {
-    id: 3,
-    title: "香港理工大学校董会主席林大辉博士一行到访南京开展新春团拜",
-    date: "2022-05-15",
-    img: new_03,
   },
 ]);
 

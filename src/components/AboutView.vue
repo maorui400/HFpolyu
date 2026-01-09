@@ -138,7 +138,7 @@ const HFIntntroduction4 = ref(
   background: url("../assets/images/about/sign.jpg");
 }
 .container .content .introduction .meeting_pic {
-  background: url("../assets/images/news/newsitem/details_1_04.jpg");
+  background: url("../assets/images/news/newsitem/details!1_04.png");
 }
 .container .content .introduction .img {
   width: 100%;
@@ -240,8 +240,11 @@ const HFIntntroduction4 = ref(
 .mobile .container {
   width: 100%;
 }
+
 .mobile .container .content {
   padding: 0 16px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .mobile .container .content .introduction {
@@ -249,6 +252,9 @@ const HFIntntroduction4 = ref(
   margin-top: 30px;
 }
 
+.mobile .container .content .introduction video {
+  width: 100%;
+}
 .mobile .container .content .introduction .title {
   font-size: 20px;
   padding-bottom: 8px;

@@ -16,7 +16,7 @@ const newsCovers01 = import.meta.glob(
 
 // 导入 newsitem 文件夹中的图片
 const newsModules01 = import.meta.glob(
-  "../assets/images/news/newsitem/details_*.{png,jpg}",
+  "../assets/images/news/newsitem/details!*.{png,jpg}",
   { eager: true }
 );
 
@@ -34,11 +34,12 @@ const newsImageList = computed(() => newImages.value);
 let _newsImageObj = {}
 newsImageList.value.map( item => {
   // 开头符号
- let _startIndex = item.lastIndexOf('_')+1
- let _endIndex = item.indexOf('-', _startIndex)
+ let _startIndex = item.lastIndexOf('!')+1
+ let _endIndex = item.indexOf('_', _startIndex)
  let _substr = item.substring(_startIndex, _endIndex);
+  console.log('_substr',_substr);
   // 结尾符号
-  !!_newsImageObj[`new`+ _substr] ? _newsImageObj[`new`+ _substr].push(item) : _newsImageObj[`new`+ _substr] = [item]  
+  !!_newsImageObj[`new`+ _substr] ? _newsImageObj[`new`+ _substr].push(item ) : _newsImageObj[`new`+ _substr] = [item ]  
 })
 console.log('_newsImageObj',_newsImageObj);
 
@@ -343,62 +344,62 @@ const newsInfo = ref([
         content:
           "活动开始，合肥市委副书记、市长罗云峰开场致辞，“合肥是科创与产业名城，始终坚持以创新引领高质量发展，大力培养新质生产力。此次与香港理工大学共建研究院，是皖港科创协同新起点，我们将全力支持研究院建设，共同推动科技创新合作迈向新高度。” 罗云峰市长表示, “研究院肩负三大使命：打造技术转化的‘加速器’、搭建人才培养的‘立交桥’、构建国际合作的‘桥头堡’，相信研究院定能成果丰硕，为皖港合作与科技自立自强贡献力量。”",
       },
-      { type: "image", content: _newsImageObj.new1[0]},
+      { type: "image", content: _newsImageObj.new1[0] || ''},
       {
         type: "text",
         content:
           "香港理工大学校董会主席、全国政协委员、金紫荆星章获得者 、太平绅士林大辉致辞，“香港理工大学合肥技术创新研究院的成立是香港理工大学融入国家发展大局的重要一步。我们将充分发挥理大的科研实力与国际化经验，与安徽的产业需求紧密结合，为区域创新体系建设贡献智慧与力量。",
       },
-      { type: "image", content: _newsImageObj.new1[1] },
+      { type: "image", content: _newsImageObj.new1[1]|| '' },
       {
         type: "text",
         content:
           "香港理工大学高级副校长(研究及创新)赵汝恒表示，“研究院将对接合肥重点产业发展的需求，重点聚焦空天信息与生物医疗精密传感器领域，依托已设七大研发中心，进一步推动科研成果转化为创新技术或产品并落地使用，联动政企构建‘研发-转化-创业’生态，助力合肥高质量发展与国家科技进步。”",
       },
-      { type: "image",content:  _newsImageObj.new1[2] },
+      { type: "image",content:  _newsImageObj.new1[2] || ''},
       {
         type: "text",
         content:
           "揭牌投运环节包括了研究院揭牌以及InnoHub创业中心揭牌，首先由合肥市委副书记、市长罗云峰，安徽省科技厅厅长赵明，香港理工大学校董会主席林大辉，香港理工大学高级副校长(研究及创新)赵汝恒上台为研究院揭牌，为研究院的正式投运注入了强劲动能。",
       },
-      { type: "image",content:  _newsImageObj.new1[3] },
+      { type: "image",content:  _newsImageObj.new1[3]|| '' },
       {
         type: "text",
         content:
           "InnoHub创业中心揭牌环节，由合肥市政协副主席、市政府秘书长罗平、合肥市科技局局长范进、庐阳区委副书记张好启、香港理工大学高级副校长(研究及创新)赵汝恒、香港理工大学协理副校长（内地研究拓展）董澄、香港理工大学合肥技术创新研究院院长陈武登台共同揭牌，为InnoHub创业中心拉开序幕。",
       },
-      { type: "image",content:  _newsImageObj.new1[4] },
+      { type: "image",content:  _newsImageObj.new1[4] || ''},
             {
         type: "text",
         content:
           " 中国工程院院士、英国皇家工程院院士陈清泉，人工智能领域知名专家杨红霞等一批校内外专家受聘为研究院专家委员会委员，专家委员会聘任环节由合肥市副市长何逢阳、香港理工大学协理副校长（内地研究拓展）董澄上台为研究院专家委员会专家代表颁发聘书。专家名单为：陈清泉、杨红霞、陈翠芳、陈武、严锋、刘文、方明、徐蕾、张立野、黄叙新、裴晓辉、刘军、徐正安、章晓军、陈建新。",
       },
-      { type: "image",content:  _newsImageObj.new1[5] },
-      { type: "image",content:  _newsImageObj.new1[6] },
+      { type: "image",content:  _newsImageObj.new1[5] || ''},
+      { type: "image",content:  _newsImageObj.new1[6]|| '' },
       {
         type: "text",
         content:
           "合作项目签约环节包含香港理工大学与合肥理工学院签约、香港理工大学与中国科大附属第一医院签约、香港理工大学合肥技术创新研究院战略合作签约、香港理工大学合肥技术创新研究院孵化企业介绍。首先, 由香港理工大学高级副校长(研究及创新)赵汝恒、合肥理工学院党委副书记、校长吴玉程作为双方学校代表, 上台为香港理工大学与合肥理工学院合作项目签约。",
       },
-      { type: "image",content:  _newsImageObj.new1[7] },
+      { type: "image",content:  _newsImageObj.new1[7] || ''},
       {
         type: "text",
         content:
           "接着, 由香港理工大学医疗科技与资讯学系系主任、研究院肿瘤放疗疗效管理辅助机器人研发中心主任蔡璟与中国科大附属第一医院(安徽省立医院)副院长、中国科大附属第一医院西区(安徽省肿瘤医院)院长袁双虎为双方代表, 上台为香港理工大学与中国科大附属第一医院合作进行签约。",
       },
-      { type: "image",content:  _newsImageObj.new1[8] },
+      { type: "image",content:  _newsImageObj.new1[8] || ''},
       {
         type: "text",
         content:
           "其次, 研究院与中国移动通信集团安徽有限公司、合肥理工学院、安徽中科太赫兹科技有限公司、科大硅谷服务平台(安徽)有限公司、兴泰控股(香港)有限公司、合肥市人才发展集团、江苏二十六度节能科技有限公司签署战略合作协议,由研究院陈武院长上台与各企业代表签署战略合作协议。",
       },
-      { type: "image",content:  _newsImageObj.new1[9] },
+      { type: "image",content:  _newsImageObj.new1[9] || ''},
       {
         type: "text",
         content:
           "最后, 由研究院副院长严锋上台与研究院InnoHub创业中心首批入驻企业代表合影留念, 首批入驻企业包含:香港知感科技有限公司、爱思美科技有限公司、北京微摩尔科技有限公司、星络科技有限公司、天驭创新有限公司。",
       },
-      { type: "image",content:  _newsImageObj.new1[10] },
+      { type: "image",content:  _newsImageObj.new1[10] || ''},
       {
         type: "text",
         content:
