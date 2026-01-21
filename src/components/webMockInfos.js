@@ -278,48 +278,38 @@ const tenderingInfo = [
 // 3.人才招聘信息
 const recruitmentInfo = [
   {
-    title: "超声FPGA工程师",
-    requirements: "合肥-庐阳区  |  无需经验  |  硕士  |   1.2-2.4万",
-    position_link: "https://jobs.51job.com/hefei-lyq/167165401.html",
+    title: "VR设计工程师",
+    requirements: "合肥-庐阳区  |  2年及以上  |  本科以上  |   7k-14k",
+    position_link: "https://jobs.51job.com/hefei-lyq/169839820.htm",
   },
   {
-    title: "超声软件工程师",
-    requirements: "合肥-庐阳区  |  无需经验  |  本科  |   1.2-2.4万",
-    position_link: "https://jobs.51job.com/hefei-lyq/167165504.html",
+    title: "光学工程师",
+    requirements: "合肥-庐阳区  |  2年及以上  |  本科以上  |   7k-14k",
+    position_link: "https://jobs.51job.com/hefei-lyq/169840555.html",
   },
-  {
-    title: "超声硬件工程师",
-    requirements: "合肥-庐阳区  |  无需经验  |  本科  |   1.2-2.4万",
-    position_link: "https://jobs.51job.com/hefei-lyq/167165273.html",
-  },
-  {
-    title: "超声算法工程师",
-    requirements: "合肥-庐阳区  |  5年及以上  |  硕士  |   1.2-2.4万",
-    position_link: "https://jobs.51job.com/hefei-lyq/167165645.html",
-  },
-  {
-    title: "市场宣传推广助理主管（IT及新媒体运营主管）",
+    {
+    title: "低空项目研究助理",
     requirements:
-      "合肥-庐阳区  |  5年及以上  |  本科  |  英文读写熟练  |   7千-1.2万",
-    position_link: "https://jobs.51job.com/hefei-lyq/168248691.html",
+      "合肥-庐阳区  |  1年及以上  |  本科以上  |  7K-10K",
+    position_link: "https://jobs.51job.com/hefei-lyq/168995692.html",
   },
     {
     title: "低空项目经理",
     requirements:
-      "合肥-庐阳区  |  5年及以上  |  本科  |  英语读写熟练",
+      "合肥-庐阳区  |  5年及以上  |  本科以上  |  10K-20K",
     position_link: "https://jobs.51job.com/hefei-lyq/168996822.html",
   },
       {
-    title: "高级科研助理",
+    title: "超声算法工程师",
     requirements:
-      "合肥-庐阳区  |  1年及以上  |  本科  |  英语读写熟练",
-    position_link: "https://jobs.51job.com/hefei-lyq/168625187.html",
+      "合肥-庐阳区  |  5年及以上  |  硕士  |  12k-24k",
+    position_link: "https://jobs.51job.com/hefei-lyq/167165645.html",
   },
         {
-    title: "研究助理",
+    title: "超声换能器助理工程师",
     requirements:
-      "合肥-庐阳区  |  1年及以上  |  本科  |  英语简单沟通/读写",
-    position_link: "https://jobs.51job.com/hefei-lyq/168995692.html",
+      "合肥-庐阳区  |  1年及以上  |  本科以上  |  7k-9k",
+    position_link: "https://jobs.51job.com/hefei-lyq/168625187.html",
   },
   
 ];
