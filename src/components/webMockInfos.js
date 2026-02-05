@@ -299,17 +299,17 @@ const recruitmentInfo = [
       "合肥-庐阳区  |  5年及以上  |  本科以上  |  10K-20K",
     position_link: "https://jobs.51job.com/hefei-lyq/168996822.html",
   },
-      {
+   {
     title: "超声算法工程师",
     requirements:
-      "合肥-庐阳区  |  5年及以上  |  硕士  |  12k-24k",
+      "合肥-庐阳区  |  1年及以上  |  硕士  |  10k-18k",
     position_link: "https://jobs.51job.com/hefei-lyq/167165645.html",
   },
-        {
+  {
     title: "超声换能器助理工程师",
     requirements:
       "合肥-庐阳区  |  1年及以上  |  本科以上  |  7k-9k",
-    position_link: "https://jobs.51job.com/hefei-lyq/168625187.html",
+    position_link: "https://jobs.51job.com/hefei-lyq/170474278.html",
   },
   
 ];
